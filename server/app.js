@@ -5,6 +5,7 @@ const { render } = require('ejs')
 require("./db/connect")
 const port = process.env.PORT || 3000;
 const Register = require("./models/users");
+//register collection-name 
 const { json } = require("express");
 // to host a static file 
 
@@ -45,6 +46,28 @@ app.post('/register', async (req, res) => {
         res.status(400).send(err);
     }
 
+})
+app.post('/login',async(req,res)=>
+{
+   try{
+  const username=req.body.existingusername;
+  const password=req.body.existingpassword;
+//   console.log(`${username}:${password}`);
+//1st username from database second from inpt 
+const user_username= await Register.findOne({username:username})
+// console.log(user_username);
+if(user_username.password===password)
+{
+    res.status(201).render("after", { title: 'After Registration' })
+}
+else{
+    res.send(`password mismatch`);
+}
+   }
+   catch(err)
+   {
+    req.status(400).render(err)
+   }
 })
 
 app.listen(port, () => {
