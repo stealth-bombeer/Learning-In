@@ -1,0 +1,68 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+  <body>
+    <form action="/register" method="POST">
+    <div class="cont">
+      <div class="form sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+          <span>Username<span>
+          <input type="text" name="existingusername" />
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="existingpassword" />
+        </label>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="submit" class="submit" >Sign In</button>
+
+      </div>
+      <div class="sub-cont">
+        <div class="img">
+          <div class="img__text m--up">
+            <h2>New here?</h2>
+            <p>Sign up and discover great amount of new opportunities!</p>
+          </div>
+          <div class="img__text m--in">
+            <h2>One of us?</h2>
+            <p>If you already has an account, just sign in. We've missed you!</p>
+          </div>
+          <div class="img__btn">
+            <span class="m--up">Sign Up</span>
+            <span class="m--in">Sign In</span>
+          </div>
+        </div>
+      </form>
+      <form action="/register" method="POST">
+        <div class="form sign-up">
+          <h2>Time to enlighten,</h2>
+          <label>
+            <span>Full-Name</span>
+            <input type="text" name="registerfullname"/>
+          </label>
+          <label>
+            <span>Username</span>
+            <input type="text"name="registerusername" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email"name="registeremail" />
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="registerpassword"/>
+          </label>
+          <label>
+            <span> Confirm Password</span>
+            <input type="password" name="registerconfirmpassword"/>
+          </label>
+          <button type="submit" class="submit">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </form>
+    <script src="register.js"></script>
+  </body>
+
+</html>
