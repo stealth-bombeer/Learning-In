@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
-import { Login} from "./components/login/Login"
-import { Register} from "./components/login/Register"
+import { Login} from "../../home/src/login/Login"
+import { Register} from "../../home/src/login/Register"
 
 class App extends React.Component {
   constructor(props) {
