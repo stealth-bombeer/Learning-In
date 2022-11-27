@@ -23,8 +23,9 @@ function App() {
       <div className="content">
         <Routes>
           <Route path='/' element={<Login />} />
-          {/* <Route element={<ProtectedRoutes />}> */}
           <Route path='/register' element={<Register />} />
+          {/* <Route element={<ProtectedRoutes />}> */}
+      
           <Route path="/home" element={<Home />} />
           <Route path="/createquiz" element={<Createquiz />} />
           <Route path="/aboutus" element={<Aboutus />} />
@@ -36,7 +37,6 @@ function App() {
         {/* </Route> */}
         </Routes>
       </div>
-
     </Router>
   );
 }

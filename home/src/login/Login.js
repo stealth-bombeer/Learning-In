@@ -1,20 +1,20 @@
 import React from "react";
 import loginImg from "./login.svg";
 import { useState } from "react"
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import "./style.scss";
+let x=false;
 
 const Login = () => {
   const [input, setInput] = useState({
     username:"",
     password:""
   })
-  // const [logged, setLogged] = useState(false);
+  const navigate=useNavigate();
+  const [logged, setLogged] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Before");
     console.log(input);
-    console.log("After");
     // console.log(username);
     fetch('http://localhost:5000/', {
       method: 'POST',
@@ -30,21 +30,20 @@ const Login = () => {
     }
     )
       .then((res) => {
-        res.json()
-        // setLogged(true);
-        // console.log("logged");
-        // console.log(logged);
+       return res.json()
       })
       .then((data) => {
-        console.log(data, "userregisterd")
+        // setLogged(true);
+        x=true;
+        console.log(data, "Logged-In")
+        if(data==1)
+   { navigate('/home');}
+        console.log(x);
 
-      })
-      .catch((err) => {
-        console.log(err)
       })
   }
 
-
+// console.log(x);
   return (
     <div className="base-container">
       <div className="header">Login</div>
@@ -70,12 +69,10 @@ const Login = () => {
             </div>
           </div>
           <div className="footer">
-      <Link to="/home">
-            <button  onClick={handleSubmit} ype="submit" className="btn">
+            <button  onClick={handleSubmit} type="submit" className="btn">
               Login
- 
             </button>
-       </Link>  
+
           </div>
         </form>
       </div>
@@ -85,3 +82,4 @@ const Login = () => {
 }
 
 export default Login;
+export {x};

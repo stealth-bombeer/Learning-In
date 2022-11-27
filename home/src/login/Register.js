@@ -1,35 +1,17 @@
 import React from "react";
 import loginImg from "./login.svg";
-import { Link } from 'react-router-dom';
+import { Link,useNavigate} from 'react-router-dom';
 import "./style.scss";
 import { Component } from "react";
 import { useState } from "react";
 
-// export class Register extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state={
-//       username:"",
-//       email:"",
-//       password:"",
-//       confirmPassword:"",
-//     }
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//   }
-//   handleSubmit(e)
-//   {
-//     e.preventDefault();
-//     const{username,email,password,confirmpassword}=this.state;
-//     console.log(username)
-//   }
-
-//   render() {
 const Register = () => {
-
+let navigate=useNavigate();
   const [username, setUsername] = useState(" ");
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
   const [confirmpassword, setConfirmPassword] = useState(" ");
+  const [registered,setRegistered]=useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,22 +33,14 @@ const Register = () => {
       })
     }
     )
-      //  .then((res)=>
-      //  {
-      //  console.log(res);
-      //  if (!res.ok) {
-      //   throw Error('could not fetch data for that resource ');
-      // }
-      // return res.json();
-      //  })
       .then((res) => {
          return res.json()
       })
       .then((data) => {
-        console.log(data, "userregisterd")
-      })
-      .catch((err) => {
-        console.log(err)
+        setRegistered(true)
+        console.log(data, "userregisterd")  
+          if(data==1)
+        { navigate('/home');}
       })
   }
 

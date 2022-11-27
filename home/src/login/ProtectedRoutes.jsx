@@ -1,8 +1,8 @@
-import {logged} from '../login'
+import {x} from './Login'
 import { Navigate,Outlet } from "react-router";
 const ProtectedRoutes=()=>
 { let auth 
-  if(logged)
+  if(x)
  {  auth = {'token':true }
   console.log('true')
 }

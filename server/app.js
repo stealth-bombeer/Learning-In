@@ -3,11 +3,8 @@ const app = express()
 const cors = require('cors')
 const mongoose = require('mongoose')
 require('./models/UserSchema')
-const jwt = require("jsonwebtoken")
-const JWT_SECRET = "ndsahbb%b34y1({}pl+dvf^^82##"
 app.use(express.json())
 app.use(cors())
-const bcrypt = require('bcryptjs')
 
 const mongoUrl = "mongodb+srv://Learning-In:coddinggujjus@cluster0.qtx9wb3.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect(mongoUrl, {
@@ -38,6 +35,7 @@ app.post("/register", async (req, res) => {
         if (oldUser) {
             //    return res.send({ error: "User exists" })
             console.log("user exists")
+           return res.json(0)
         }
         else {
             //creating new user 
@@ -52,44 +50,38 @@ app.post("/register", async (req, res) => {
                     email: email,
                     password:password
                 })
-                // console.log(newuser)
-                res.send({ status: "ok" })
+                console.log("New added")
+               return res.json(1)
             }
         }
     }
-    catch (err) { // console.log('err')
+    catch (err) { 
         res.send({ status: "error" })
     }
 })
 
-app.post("/", async (req, res) => {
-    const { username, password } = req.body;
-    // console.log("before")
-    // console.log(req.body)
-    // // res.send("logjreu")
-    // console.log("AFTER")
-    // const user = await User.findOne({ username });
-    // if (!user) {
-    //     // return res.json({ error: "User Not found" });
-    //     console.log("User Do Not Exist");
-    // }
-    // // if (await bcrypt.compare(password, user.password)) {
-    // //     const token = jwt.sign({}, JWT_SECRET);
+app.post("/",async (req,res)=>
+    {
+const {username,password}=req.body;
+const user=await User.findOne({username});
 
-    // //     if (res.status(201)) {
-    // //         return res.json({ status: "ok", data: token });
-    // //     } else {
-    // //         return res.json({ error: "error" });
-    // //     }
-    // // }
-    // // res.json({ status: "error", error: "InvAlid Password" });
-    // else {
-    //     if (password === user.password) {
-    //         console.log("Logged-in")
-    //         return res.json('alright')
-    //     }
-    //     else {
-    //         console.log("Incorrect Password")
-    //     }
-    // }
-});
+if(!user)
+{
+    return res.json({error:"User do not exists"});
+    console.log("User Do not exist")
+}
+else 
+{
+    if(user.password===password)
+    {
+    console.log("Authenticated")
+    return res.json(1)
+    }
+    else 
+    {console.log("Incorrect password ")
+    return res.json({status:"password missmatch"})
+    }
+}
+
+
+ })
