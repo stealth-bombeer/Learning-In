@@ -15,6 +15,7 @@ import Practice from './Practice';
 import Friends from './Friends';
 import ProtectedRoutes from "./login/ProtectedRoutes";
 import Quiz1 from './Quiz1'
+import Scorecard from './Scorecard';
 function App() {
 
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/createquiz" element={<Createquiz />} />
           <Route path="/quiz1" element={<Quiz1 />} />
           <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/Scorecard" element={<Scorecard/>} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/viewprofile" element={<Viewprofile />} />
           <Route path="/joinroom" element={<Joinroom />} />

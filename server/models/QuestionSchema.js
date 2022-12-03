@@ -37,7 +37,17 @@ const QuestionSetSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
-    questionArray:[QuestionSchema]
+    questionArray:[QuestionSchema],
+    room:
+    {
+        type:String,
+        required:true,
+    },
+    timer:
+    {
+        type:String,
+        required:true,
+    }
 })
 
 //collection:-Register

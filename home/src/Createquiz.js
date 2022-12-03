@@ -171,7 +171,7 @@ const Createquiz = () => {
     const [count,setCount]=useState(0);
     const [counter,setCounter]=useState(0);
     const host={topic,title,opta,optb,optc,optd,ans}
-
+   let room=546
     const handleNext = (e) => {
         e.preventDefault();
         
@@ -301,8 +301,10 @@ const Createquiz = () => {
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          adminName: "Smit",
-          questionArray:user
+          adminName: "Kunal",
+          questionArray:user,
+          room:room,
+          timer:5
         })
       }
       )
@@ -326,6 +328,7 @@ const Createquiz = () => {
         value={topic}
         onChange={(e) => setTopic(e.target.value)}
       />
+      <p>{parseInt(count)+1}</p>
       <label>Add the question:</label>
       <textarea
         required
