@@ -14,7 +14,7 @@ import Joinroom from './Joinroom';
 import Practice from './Practice';
 import Friends from './Friends';
 import ProtectedRoutes from "./login/ProtectedRoutes";
-
+import Quiz1 from './Quiz1'
 function App() {
 
   return (
@@ -25,9 +25,9 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/register' element={<Register />} />
           {/* <Route element={<ProtectedRoutes />}> */}
-      
           <Route path="/home" element={<Home />} />
           <Route path="/createquiz" element={<Createquiz />} />
+          <Route path="/quiz1" element={<Quiz1 />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/viewprofile" element={<Viewprofile />} />

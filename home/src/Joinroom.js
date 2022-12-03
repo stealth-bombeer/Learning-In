@@ -9,10 +9,16 @@ const Joinroom = () => {
     }
 
     return ( 
-        <div className="create">
-    
+        <div className="create" >
+ <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere, magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere, magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere, magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?</h2>
+    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere, magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?</h2>   
+          <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere, magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?</h2>
     <form onSubmit={handleSubmit}>
+    
     <label>Enter the Room Code:</label>
+   
       <input 
         type="text" 
         required 

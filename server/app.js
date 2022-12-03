@@ -1,8 +1,10 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const http=require('http');
 const mongoose = require('mongoose')
 require('./models/UserSchema')
+require('./models/QuestionSchema')
 app.use(express.json())
 app.use(cors())
 
@@ -12,7 +14,7 @@ mongoose.connect(mongoUrl, {
     useUnifiedTopology: true,
 })
     .then(() => {
-        console.log("Connected to Cloud ")
+        console.log("Connected to Cloud")
     })
     .catch((err) => {
         console.log(err)
@@ -24,6 +26,7 @@ app.listen(5000, () => {
 })
 //userinfo is the model name or collection name 
 const User = mongoose.model("UserInfo");
+const Question = mongoose.model("Question");
 //getting data back from cloud 
 
 app.post("/register", async (req, res) => {
@@ -59,6 +62,27 @@ app.post("/register", async (req, res) => {
         res.send({ status: "error" })
     }
 })
+app.post('/createquiz',async (req,res)=>
+ {
+    const {adminName,questionArray} = req.body
+    console.log(questionArray)
+  try 
+  {  console.log("encounterd");
+       await Question.create(
+       {
+        adminName:adminName,
+        questionArray:questionArray
+       })
+       console.log("New data-set added");
+       return res.json({status:"ok"})
+  } 
+  catch (err) 
+  {  console.log("err encountered")
+    res.send({ status: "error" })
+  }
+
+
+ })
 
 app.post("/",async (req,res)=>
     {
@@ -85,3 +109,5 @@ else
 
 
  })
+
+ 
