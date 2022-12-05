@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Createquiz from "./Createquiz";
-
+// import uuid from 'uuid';
+const { v4:uuid } = require('uuid');
+const roomCode=uuid().slice(0,5);
 const Codetimer = ({time,setTime,code,setCode}) => {
     
    
     const navigate=useNavigate();
-    
+  
     const handleSubmit=(e)=>{
     //    <Createquiz
     //    time={time}
@@ -16,13 +18,15 @@ const Codetimer = ({time,setTime,code,setCode}) => {
     setCode(code+1);
        navigate("/createquiz");
     }
-    return ( 
+   
+       return ( 
         <div className="codetimer">
             <h2>h</h2>
             <h2>h</h2>
             <h2>h</h2>
             <h2>h</h2>
-            <h1>Room Code is: {code +1}</h1>
+            {/* <h1>Room Code is: {code +1}</h1> */}
+      <h1> Room Code is :{roomCode} </h1>
 
             <label>Select Time per quest:</label>
         <select
@@ -46,3 +50,4 @@ const Codetimer = ({time,setTime,code,setCode}) => {
 }
  
 export default Codetimer;
+export {roomCode};
