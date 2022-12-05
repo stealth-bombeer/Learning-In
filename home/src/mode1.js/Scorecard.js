@@ -11,7 +11,7 @@ const Scorecard = ({score,count,setCount}) => {
         <p>dfhhhlfkwj</p>
         <p>dfhhhlfkwj</p>
         <p>Your Fucking Score is: {score}/{count-1}</p>
-        <Button
+        <button
         variant="contained"
         color="secondary"
         size="large"
@@ -19,7 +19,7 @@ const Scorecard = ({score,count,setCount}) => {
         href="/home"
       >
         Go to homepage
-      </Button>
+      </button>
         </div>
      );
 }

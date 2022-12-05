@@ -6,7 +6,7 @@ import "./Quiz2.css";
 const Quiz2 = ({ questions, score, setScore, setQuestions }) => {
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
-
+  const [name,setName]=useState('Kunal');
   useEffect(() => {
     setOptions(
       questions &&

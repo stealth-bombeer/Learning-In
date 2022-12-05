@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoUrl =
-  "mongodb+srv://dev_bhuva:devbhuva@cluster0.0yscvjq.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://Kunal123:kunal1234@cluster0.qtx9wb3.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,
@@ -74,7 +74,7 @@ app.post("/createquiz", async (req, res) => {
     return res.json({ status: "ok" });
   } catch (err) {
     console.log("err encountered");
-    console.log(err)
+    console.log(err);
     res.send({ status: "error" });
   }
 });
@@ -101,7 +101,7 @@ app.get("/quiz1", async (req, res) => {
   const { room } = req.headers;
   const questions = await Question.findOne({ room });
   console.log(questions);
-  return res.json({questions});
+  return res.json({ questions });
   //     console.log("dkbus")
   //    Question.collection('questions').find({room:room}).toArray((err,result)=>{
   //     if(err) throw err
