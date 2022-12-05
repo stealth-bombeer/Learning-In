@@ -180,10 +180,10 @@ const Createquiz = ({time,setTime,code,setCode}) => {
 
         if(count===quest.length)
         {
-          if(quest[quest.length])
-          {
-            setCount(count+1);
-          }
+          // if(quest[quest.length])
+          // {
+          //   setCount(count+1);
+          // }
           if(counter!==0)
           {
             setCount(count+1)

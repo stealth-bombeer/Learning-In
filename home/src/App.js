@@ -1,5 +1,5 @@
 
-import Navbar from './Navbar';
+import Navbar from '../src/Navbar comp/Navbar';
 import axios from "axios";
 import React, { useState } from "react";
 import "./App.scss";
@@ -7,10 +7,10 @@ import  Login  from "./login/Login"
 import Register  from "./login/Register"
 import Home from './Home'
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
-import Aboutus from './Aboutus';
+import Aboutus from '../src/Navbar comp/Aboutus';
 import Createquiz from '../src/mode1.js/Createquiz';
-import Settings from './Settings';
-import Viewprofile from './Viewprofile';
+import Settings from '../src/Navbar comp/Settings';
+import Viewprofile from '../src/Navbar comp/Viewprofile';
 import Joinroom from '../src/mode1.js/Joinroom';
 import Practice from '../src/mode2.js/Practice';
 import Friends from './Friends';
