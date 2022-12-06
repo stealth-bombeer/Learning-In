@@ -22,7 +22,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
  
-  const [startTimer,setStartTimer]=useState(0);
+  const [startTimer,setStartTimer]=useState(false);
   const [ans,setAns]= useState(' ');
   
   const navigate = useNavigate();
@@ -57,6 +57,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   const handleStart = (e) => {
     e.preventDefault();
     setStartTimer(true);
+    console.log(startTimer);
      x=!startTimer;
     console.log(x);
     console.log("quiz started");
@@ -175,15 +176,13 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
         </button>
       </div>
       </div>
-      <div className="controls">
-      <div className="start">
-        <button onClick={handleStart} type="submit">
-          Start
-        </button>
-      </div>
+      {x?<div className="start"><button onClick={handleClick}>Quit</button>
+      </div>:<div className="start"><button onClick={handleStart} type="submit">
+      Start
+    </button>
+  </div>}
 
-      <button onClick={handleClick}>Quit</button>
-      </div>
+
     </div>
     </div>
     </div>
