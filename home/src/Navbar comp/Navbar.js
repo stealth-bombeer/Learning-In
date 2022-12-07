@@ -26,22 +26,22 @@ const Navbar = () => {
 
         <div className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
 
-          <span className='text-gray-800 hover:text-purple-600 duration-200' >
+          <span className='text-gray-800 mr-4 hover:text-purple-600 duration-200' >
             <Link to="home/">
               <button>Home</button>
             </Link>
           </span>
-          <span className='text-gray-800 hover:text-purple-600 duration-200' >
+          <span className='text-gray-800 mr-4 hover:text-purple-600 duration-200' >
             <Link to="codetimer/">
               <button>Create A Quiz</button>
             </Link>
           </span>
-          <span className='text-gray-800 hover:text-purple-600 duration-200' >
+          <span className='text-gray-800 mr-4 hover:text-purple-600 duration-200' >
             <Link to="aboutus/">
               <button>About Us</button>
             </Link>
           </span>
-          <span className='text-3xl text-gray-600 hover:text-purple-600 duration-200 mr-1 pt-2' >
+          <span className='text-3xl text-gray-600 mr-4 hover:text-purple-600 duration-200 mr-1 pt-2' >
             <Link to="settings/">
               <ion-icon name="settings-outline"></ion-icon>
             </Link>

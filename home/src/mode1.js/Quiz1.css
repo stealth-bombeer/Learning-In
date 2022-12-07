@@ -1,7 +1,9 @@
 .portal1 {
+    place-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     font-family: "Poppins", sans-serif;
   }
   .question {
@@ -77,4 +79,4 @@
     margin: 10px;
     box-shadow: 0 0 2px black;
   }
- 
+  

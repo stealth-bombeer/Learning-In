@@ -323,49 +323,90 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           
         })
     }
+    const myStyle = {
+      backgroundImage:
+          "url('https://gshelper.com/wp-content/uploads/2017/09/Quiz-Logo.png')",
+      height: '100vh',
+      marginTop: '120px',
+      fontSize: '10px',
+      backgroundSize: 'contain',
+      width: '100%',
+      backgroundRepeat: 'no-repeat',
   
+  };
 
     return ( 
-    <div className="create">
-    <h2>Add a New Question</h2>
-    <h2>h</h2>
-    <form >
+      
+    <div className=" grid grid-cols-3">
+      <div className="col-span-1 bg-center">
+    <div style={myStyle}>
+   </div>
+   </div>
+   <div className="create col-span-2 pl-60 pt-10">
+    <form>
+    <div>
+    
       <p>{parseInt(count)+1}</p>
-      <label>Add the question:</label>
-      <textarea
+      <div>
+      <label className="bold pt-10 text-2xl font-Playfair Display  font-bold text-cyan-800 text-area:width-">ADD THE QUESTION:</label>
+      <textarea className="w-500%
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0"
         required
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       ></textarea>
-      <label>Add option A:</label>
+      </div>
+    </div>
+    <div className="grid grid-cols-2 gap-4 pt-8">
+      <div>
+      <label className="bold text-lg font-merriweather italic font-bold text-cyan-800 textarea-rounded">Add option A:</label>
       <input 
         type="text" 
         required 
         value={opta}
         onChange={(e) => setOpta(e.target.value)}
       />
-      <label>Add option B:</label>
+      
+      </div>
+      <div>
+      <label className="bold text-lg font-merriweather italic font-bold text-cyan-800">Add option B:</label>
       <input 
         type="text" 
         required 
         value={optb}
         onChange={(e) => setOptb(e.target.value)}
       />
-      <label>Add option C:</label>
+      </div>
+      <div>
+      <label className="bold  text-lg font-merriweather italic font-bold  text-cyan-800">Add option C:</label>
       <input 
         type="text" 
         required 
         value={optc}
         onChange={(e) => setOptc(e.target.value)}
-      />
-      <label>Add option D:</label>
+      /></div>
+      <div>
+      <label className="bold text-lg font-merriweather italic font-bold text-cyan-800">Add option D:</label>
       <input 
         type="text" 
         required 
         value={optd}
         onChange={(e) => setOptd(e.target.value)}
       />
-      <label>Select the correct option:</label>
+      </div>
+      </div>
+      <div>
+      <label className="bold text-lg pt-5 font-merriweather italic font-bold text-cyan-800">Select the correct option:</label>
         <select
           value={ans}
           required
@@ -377,12 +418,18 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           <option value="C">C</option>
           <option value="D">D</option>
         </select>
-      
-      <button onClick={handlePrev}>prev</button>
+      </div>
+      <div className="pt-10 flex justify-items-center">
+      <button  onClick={handlePrev} >prev</button>
       <button onClick={handleNext}>next</button>
       {<button onClick={handleDone}>Done</button> }
+      </div>
     </form>
-  </div> );
+    
+  </div> 
+  </div>
+ 
+  );
 }
  
 export default Createquiz;
