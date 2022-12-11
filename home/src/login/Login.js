@@ -4,7 +4,8 @@ import { useState } from "react"
 import { Link,useNavigate } from 'react-router-dom';
 import "./style.scss";
 let x=false;
-
+let authUser='';
+let y=5; 
 const Login = () => {
   const [input, setInput] = useState({
     username:"",
@@ -12,6 +13,7 @@ const Login = () => {
   })
   const navigate=useNavigate();
   const [logged, setLogged] = useState(false);
+  const [name,setName]=useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(input);
@@ -24,9 +26,7 @@ const Login = () => {
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(input
-
-      )
+      body: JSON.stringify(input)
     }
     )
       .then((res) => {
@@ -36,8 +36,10 @@ const Login = () => {
         // setLogged(true);
         x=true;
         console.log(data, "Logged-In")
-        if(data==1)
-   { navigate('/home');}
+        if(data.status==='ok')
+   { authUser=data.username;
+    console.log(authUser);
+    navigate('/home');}
         console.log(x);
 
       })
@@ -83,3 +85,5 @@ const Login = () => {
 
 export default Login;
 export {x};
+export{authUser};
+export {y};

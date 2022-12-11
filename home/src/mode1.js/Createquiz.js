@@ -1,163 +1,8 @@
-// import { useState,useEffect } from "react";
-
-// const Createquiz = () => {
-
-//     const [topic, setTopic] = useState('');
-//     const [question, setQuestion] = useState('');
-//     const [opta, setOpta] = useState('');
-//     const [optb, setOptb] = useState('');
-//     const [optc, setOptc] = useState('');
-//     const [optd, setOptd] = useState('');
-//     const [ans, setAns] = useState('');
-//     const[count,setCount]=useState(1)
-//     const [fired,setFired]=useState(0);
-//     const [questionArray,setQuestionArray]=useState([]);
-//     let p=1;
-//     const handleSubmit = (e) => {
-//         e.preventDefault();
-//          console.log(questionArray);
-         
-        
-//     }
-//   const handlenext=  (e)=>
-//   {
-//     e.preventDefault();
-//     const quest = {  topic,question, opta,optb,optc,optd,ans };
-//       if(questionArray.length>count)
-//       {
-//         setTopic();
-//         setQuestion(' ');
-//         setOpta(' ');
-//         setOptb(' ');
-//         setOptc(' ');
-//         setOptd(' ');
-//         setAns(' ');
-
-//       }
-
-//     console.log(quest);
-    
-//      setQuestionArray([...questionArray,{ topic:topic,question:question, opta:opta,optb:optb,optc:optc,optd:optd,ans:ans }]);
-     
-//    setCount(parseInt(count)+1);
-//     setTopic(' ');
-//     setQuestion(' ');
-//     setOpta(' ');
-//     setOptb(' ');
-//     setOptc(' ');
-//     setOptd(' ');
-//     setAns(' ');
-//     // setTimeout(() => {
-//     //   console.log(questionArray.length)
-//     // }, 2000);
-//     console.log(count);
-    
-
-//   }
-
-//   const handleprev=(e)=>
-//   { e.preventDefault();
-//     setFired(parseInt(fired)-1);
-//     // console.log(count)
-//     // setCount(parseInt(count)-1);
-//     setCount((count) => count - 1);
-//     console.log(count);
-//     let x=fired-1;
-//   const l=questionArray[questionArray.length+parseInt(x)]
-//     console.log("previous fired");
-//     // console.log(count);
-//     // console.log(parseInt(x))
-//     console.log(l)
-//     console.log(count)
-//     setTopic(l.topic);
-//     setQuestion(l.question);
-//     setOpta(l.opta);
-//     setOptb(l.optb);
-//     setOptc(l.optc);
-//     setOptd(l.optd);
-//     setAns(l.ans);
-
-//   }
-
-//   // useEffect(()=>
-//   // {
-
-//   // },[count])
-  
-
-//     return ( 
-//     <div className="create">
-//     <h2>Add a New Question</h2>
-//     <form>
-//       <label>Add the topic:</label>
-//       <input 
-//         type="text" 
-//         required 
-//         value={topic}
-//         onChange={(e) => setTopic(e.target.value)}
-//       />
-//       <p>{count}</p>
-//       <label>Add the question:</label>
-//       <textarea
-//         required
-//         value={question}
-//         onChange={(e) => setQuestion(e.target.value)}
-//       ></textarea>
-//       <label>Add option A:</label>
-//       <input 
-//         type="text" 
-//         required 
-//         value={opta}
-//         onChange={(e) => setOpta(e.target.value)}
-//       />
-//       <label>Add option B:</label>
-//       <input 
-//         type="text" 
-//         required 
-//         value={optb}
-//         onChange={(e) => setOptb(e.target.value)}
-//       />
-//       <label>Add option C:</label>
-//       <input 
-//         type="text" 
-//         required 
-//         value={optc}
-//         onChange={(e) => setOptc(e.target.value)}
-//       />
-//       <label>Add option D:</label>
-//       <input 
-//         type="text" 
-//         required 
-//         value={optd}
-//         onChange={(e) => setOptd(e.target.value)}
-//       />
-//       <label>Select the correct option:</label>
-//         <select
-//           value={ans}
-//           required
-//           onChange={(e) => setAns(e.target.value)}
-//         >
-//           <option value="A">A</option>
-//           <option value="B">B</option>
-//           <option value="C">C</option>
-//           <option value="D">D</option>
-//         </select>
-      
-//       <button onClick={handleprev}>prev</button>
-//       <button onClick={handlenext}>next</button>
-//       <button onClick={handleSubmit}>Done</button>
-//     </form>
-//   </div> );
-// }
- 
-// export default Createquiz;
-
-
-
-
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {roomCode} from  './Codetimer'
+import {authUser,y} from '../login/Login'
+import {authUserregisterd} from "../login/Register";
 const Createquiz = ({time,setTime,code,setCode}) => {
 
     
@@ -180,10 +25,6 @@ const Createquiz = ({time,setTime,code,setCode}) => {
 
         if(count===quest.length)
         {
-          // if(quest[quest.length])
-          // {
-          //   setCount(count+1);
-          // }
           if(counter!==0)
           {
             setCount(count+1)
@@ -208,10 +49,6 @@ const Createquiz = ({time,setTime,code,setCode}) => {
         }])
         setCount(count+1)
         console.log(quest)
-        // console.log('a')
-        // console.log(i)
-        // console.log(count)
-       
         setTitle('');
         setOpta('');
         setOptb('');
@@ -222,13 +59,6 @@ const Createquiz = ({time,setTime,code,setCode}) => {
       else{
          const newQuest = quest.map(obj => {
           if(obj.id===quest.length-i+1){
-            
-            //console.log(quest.length-i+1)
-            // if(counter===0)
-            // {
-            //   setCounter(counter+1)
-            //   setCount(count+1)
-            // }
            
             setTitle(obj.title)
             setOpta(obj.opta)
@@ -238,21 +68,6 @@ const Createquiz = ({time,setTime,code,setCode}) => {
             setAns(obj.ans)
             setI(i-1);
             setCount(count+1)
-            // console.log('b')
-            // console.log(i)
-            // console.log(count)
-            //console.log(count);
-            // if(count===quest.length-1)
-            // {
-            //   setTopic('');
-            //   // setTitle('');
-            //   // setOpta('');
-            //   // setOptb('');
-            //   // setOptc('');
-            //   // setOptd('');
-            //   // setAns('');
-            //   console.log('c')
-            // }
           }
          })
       }
@@ -263,7 +78,6 @@ const Createquiz = ({time,setTime,code,setCode}) => {
        e.preventDefault();
        const newQuest = quest.map(obj => {
         if(obj.id===quest.length-i-1){
-        //console.log(quest.length-i)
         
         setTitle(obj.title)
         setOpta(obj.opta)
@@ -273,27 +87,14 @@ const Createquiz = ({time,setTime,code,setCode}) => {
         setAns(obj.ans)
         setI(i+1);
         setCount(count-1)
-        // if(counter<1)
-        // {
-        //   setCount(count+1)
-        //   setCounter(counter+1)
-        // }
-        // console.log('c')
-        // console.log(i)
-        // console.log(count)
         }
        })
     }
 
-    // const handleDone = (e) =>{
-    //   e.preventDefault();
-    //   console.log(quest)
-    //   console.log(quest.length)
-    //   console.log(count)
-    // }
 
 
     const handleDone  = (e) => {
+      let admin=authUser?authUser:authUserregisterd;
       e.preventDefault();
       navigate('/home')
       console.log(quest.length)
@@ -308,7 +109,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          adminName: "Kunal",
+          adminName:admin,
           questionArray:user,
           room:roomCode,
           timer:time

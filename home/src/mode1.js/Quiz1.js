@@ -106,6 +106,33 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   };
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(score);
+    console.log(room);
+    //   // console.log(username);
+    //   fetch('http://localhost:5000/quiz1', {
+    //     mode:'no-cors',
+    //     method: 'POST',
+    //     crossDomain: true,
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Accept: "application/json",
+    //       "Access-Control-Allow-Origin": "*",
+    //     },
+    //     body: JSON.stringify(score)
+    //   }
+    //   )
+    // //     .then((res) => {
+    // //      return res.json()
+    // //     })
+    // //     .then((data) => {
+    // //       // setLogged(true);
+    // //       x=true;
+    // //       console.log(data, "Logged-In")
+    // //       if(data==1)
+    // //  { navigate('/home');}
+    // //       console.log(x);
+  
+    // //     })
     navigate('/scorecard')
   };
   const handleSelect = (option) => {
