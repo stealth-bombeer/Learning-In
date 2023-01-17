@@ -1,4 +1,4 @@
-import { Button } from "@material-ui/core";
+import { button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Question.css";
@@ -68,7 +68,7 @@ const Question = ({
             ))}
         </div>
         <div className="controls">
-          <Button
+          <button
             variant="contained"
             color="secondary"
             size="large"
@@ -77,8 +77,8 @@ const Question = ({
             onClick={() => handleQuit()}
           >
             Quit
-          </Button>
-          <Button
+          </button>
+          <button
             variant="contained"
             color="primary"
             size="large"
@@ -86,7 +86,7 @@ const Question = ({
             onClick={handleNext}
           >
             {currQues > 20 ? "Submit" : "Next Question"}
-          </Button>
+          </button>
         </div>
       </div>
     </div>

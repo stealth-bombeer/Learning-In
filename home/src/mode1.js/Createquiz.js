@@ -157,7 +157,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {roomCode} from  './Codetimer'
 const Createquiz = ({time,setTime,code,setCode}) => {
 
     
@@ -310,7 +310,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
         body: JSON.stringify({
           adminName: "Kunal",
           questionArray:user,
-          room:room,
+          room:roomCode,
           timer:time
         })
       }
@@ -433,3 +433,4 @@ const Createquiz = ({time,setTime,code,setCode}) => {
 }
  
 export default Createquiz;
+export {roomCode};

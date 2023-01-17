@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Createquiz from "./Createquiz";
-
-const Codetimer = ({ time, setTime, code, setCode }) => {
-
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
+// import uuid from 'uuid';
+const { v4:uuid } = require('uuid');
+const roomCode=uuid().slice(0,5);
+const Codetimer = ({time,setTime,code,setCode}) => {
+    
+   
+    const navigate=useNavigate();
+  
+    const handleSubmit=(e)=>{
     //    <Createquiz
     //    time={time}
     //    setTime={setTime}
@@ -108,3 +110,4 @@ const Codetimer = ({ time, setTime, code, setCode }) => {
 }
 
 export default Codetimer;
+export {roomCode};

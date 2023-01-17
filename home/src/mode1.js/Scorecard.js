@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-const Scorecard = ({score,count,setCount}) => {
-    
+import {useNavigate} from'react-router-dom'
 
-   //  setScore(location.score)
+const Scorecard = ({score,count,setCount}) => {
+  const navigate=useNavigate();
+
+  const handleClick =(e) => {
+    e.preventDefault();
+    navigate('/home')
+  } 
+
     return ( 
      <div>
         <p>dfhhhlfkwj</p>
@@ -12,6 +18,7 @@ const Scorecard = ({score,count,setCount}) => {
         <p>dfhhhlfkwj</p>
         <p>Your Fucking Score is: {score}/{count-1}</p>
         <button
+        onClick={handleClick}
         variant="contained"
         color="secondary"
         size="large"

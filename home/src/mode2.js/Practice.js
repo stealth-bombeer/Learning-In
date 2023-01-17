@@ -1,4 +1,4 @@
-import { Button, MenuItem, TextField } from "@material-ui/core";
+import { button, option, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Categories from "./Categories";
@@ -37,9 +37,9 @@ const Practice = ({fetchQuestions }) => {
             style={{ marginBottom: 30 }}
           >
             {Categories.map((cat) => (
-              <MenuItem key={cat.category} value={cat.value}>
+              <option key={cat.category} value={cat.value}>
                 {cat.category}
-              </MenuItem>
+              </option>
             ))}
           </TextField>
           <TextField
@@ -50,24 +50,24 @@ const Practice = ({fetchQuestions }) => {
             variant="outlined"
             style={{ marginBottom: 30 }}
           >
-            <MenuItem key="Easy" value="easy">
+            <option key="Easy" value="easy">
               Easy
-            </MenuItem>
-            <MenuItem key="Medium" value="medium">
+            </option>
+            <option key="Medium" value="medium">
               Medium
-            </MenuItem>
-            <MenuItem key="Hard" value="hard">
+            </option>
+            <option key="Hard" value="hard">
               Hard
-            </MenuItem>
+            </option>
           </TextField>
-          <Button
+          <button
             variant="contained"
             color="primary"
             size="large"
             onClick={handleSubmit}
           >
             Start Quiz
-          </Button>
+          </button>
         </div>
       </div>
       <img src="/quiz.svg" className="banner" alt="quiz app" />
