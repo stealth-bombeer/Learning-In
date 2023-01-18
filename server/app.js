@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 const mongoUrl =
-  "mongodb+srv://Kunal123:kunal1234@cluster0.qtx9wb3.mongodb.net/?retryWrites=true&w=majority";
+  "mongodb+srv://dev_bhuva:devbhuva@cluster0.0yscvjq.mongodb.net/?retryWrites=true&w=majority";
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,

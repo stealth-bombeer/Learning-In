@@ -16,7 +16,7 @@ const Result = ({score }) => {
   return (
     <div className="result">
       <span className="title">Final Score : {score}</span>
-      <Button
+      <button
         variant="contained"
         color="secondary"
         size="large"
@@ -24,7 +24,7 @@ const Result = ({score }) => {
         href="/home"
       >
         Go to homepage
-      </Button>
+      </button>
     </div>
   );
 };

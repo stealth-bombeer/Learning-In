@@ -24,11 +24,14 @@ const Practice = ({fetchQuestions }) => {
   };
 
   return (
+   
     <div className="content">
       <div className="settings">
         <div className="settings__select">
-       
-          <TextField
+        <h2>hii</h2>
+        <h2>hii</h2>
+        <h2>hii</h2>
+          <select
             select
             label="Select Category"
             value={category}
@@ -37,12 +40,12 @@ const Practice = ({fetchQuestions }) => {
             style={{ marginBottom: 30 }}
           >
             {Categories.map((cat) => (
-              <MenuItem key={cat.category} value={cat.value}>
+              <option key={cat.category} value={cat.value}>
                 {cat.category}
-              </MenuItem>
+              </option>
             ))}
-          </TextField>
-          <TextField
+          </select>
+          <select
             select
             label="Select Difficulty"
             value={difficulty}
@@ -50,24 +53,24 @@ const Practice = ({fetchQuestions }) => {
             variant="outlined"
             style={{ marginBottom: 30 }}
           >
-            <MenuItem key="Easy" value="easy">
+            <option key="Easy" value="easy">
               Easy
-            </MenuItem>
-            <MenuItem key="Medium" value="medium">
+            </option>
+            <option key="Medium" value="medium">
               Medium
-            </MenuItem>
-            <MenuItem key="Hard" value="hard">
+            </option>
+            <option key="Hard" value="hard">
               Hard
-            </MenuItem>
-          </TextField>
-          <Button
+            </option>
+          </select>
+          <button
             variant="contained"
             color="primary"
             size="large"
             onClick={handleSubmit}
           >
             Start Quiz
-          </Button>
+          </button>
         </div>
       </div>
       <img src="/quiz.svg" className="banner" alt="quiz app" />

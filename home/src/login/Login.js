@@ -2,7 +2,8 @@ import React from "react";
 import loginImg from "./login.svg";
 import { useState } from "react"
 import { Link,useNavigate } from 'react-router-dom';
-import "./style.scss";
+import "./style.css";
+//import './loginsignup'
 let x=false;
 
 const Login = () => {
@@ -45,39 +46,77 @@ const Login = () => {
 
 // console.log(x);
   return (
-    <div className="base-container">
-      <div className="header">Login</div>
-      <div>
-        <form >
-          <div className="content">
-            <div className="image">
-              <img src={loginImg} />
-            </div>
-            <div className="form">
-              <div className="form-group">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" placeholder="username" value={input.username} onChange={(e) => {
+    // <div className="base-container">
+    //   <div className="header">Login</div>
+    //   <div>
+    //     <form >
+    //       <div className="content">
+    //         <div className="image">
+    //           <img src={loginImg} />
+    //         </div>
+    //         <div className="form">
+    //           <div className="form-group">
+    //             <label htmlFor="username">Username</label>
+    //             <input type="text" name="username" placeholder="username" value={input.username} onChange={(e) => {
+    //               setInput({...input, [e.target.name]:e.target.value});console.log(input.username);
+    //             }} />
+    //           </div>
+    //           <div className="form-group">
+    //             <label htmlFor="password">Password</label>
+    //             <input type="password" name="password" value={input.password} placeholder="password" onChange={(e) => {
+    //               setInput({...input, [e.target.name]:e.target.value});console.log(input.password);
+    //             }} />
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div className="footer">
+    //         <button  onClick={handleSubmit} type="submit" className="btn">
+    //           Login
+    //         </button>
+    //         <div class="underline hover:underline-offset-4">
+    //         <Link to="/register">New User?</Link>
+    //         </div>
+
+    //       </div>
+    //     </form>
+    //   </div>
+
+    // </div>
+
+  //   
+  
+  <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+    <input type="text" name="username"  value={input.username} onChange={(e) => {
                   setInput({...input, [e.target.name]:e.target.value});console.log(input.username);
                 }} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" value={input.password} placeholder="password" onChange={(e) => {
-                  setInput({...input, [e.target.name]:e.target.value});console.log(input.password);
-                }} />
-              </div>
-            </div>
-          </div>
-          <div className="footer">
-            <button  onClick={handleSubmit} type="submit" className="btn">
-              Login
-            </button>
-
-          </div>
-        </form>
-      </div>
-
+      <label>Username</label>
+      
     </div>
+    <div class="user-box">
+    <input type="password" name="password" value={input.password} onChange={(e) => {
+                 setInput({...input, [e.target.name]:e.target.value});console.log(input.password);
+                 }} />
+      <label>Password</label>
+    </div>
+    <a href="#" onClick={handleSubmit}>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+    <div class="underline hover:underline-offset-4">
+             <Link to="/register">New User?</Link>
+             </div>
+  </form>
+</div>
+
+  
+      
+
   );
 }
 
