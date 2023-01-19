@@ -106,6 +106,8 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   };
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(score);
+    console.log(room);
     navigate('/scorecard')
   };
   const handleSelect = (option) => {

@@ -65,3 +65,4 @@ const Joinroom = () => {
 };
 
 export default Joinroom;
+export {room};

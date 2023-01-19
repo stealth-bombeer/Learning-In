@@ -158,6 +158,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {roomCode} from  './Codetimer'
+import {authUser,y} from '../login/Login'
+import {authUserregisterd} from "../login/Register";
 const Createquiz = ({time,setTime,code,setCode}) => {
 
     
@@ -294,6 +296,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
 
 
     const handleDone  = (e) => {
+      let admin=authUser?authUser:authUserregisterd;
       e.preventDefault();
       navigate('/home')
       console.log(quest.length)
@@ -308,7 +311,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           "Access-Control-Allow-Origin": "*",
         },
         body: JSON.stringify({
-          adminName: "Kunal",
+          adminName: admin,
           questionArray:user,
           room:roomCode,
           timer:time

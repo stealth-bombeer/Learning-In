@@ -4,6 +4,7 @@ import { Link,useNavigate} from 'react-router-dom';
 import "./style.css";
 import { Component } from "react";
 import { useState } from "react";
+let authUserregisterd='';
 
 const Register = () => {
 let navigate=useNavigate();
@@ -39,8 +40,10 @@ let navigate=useNavigate();
       .then((data) => {
         setRegistered(true)
         console.log(data, "userregisterd")  
-          if(data==1)
-        { navigate('/home');}
+        if(data.status==='ok')
+        { authUserregisterd=data.username;
+          console.log(authUserregisterd);
+          navigate('/home');}
       })
   }
 
@@ -123,3 +126,4 @@ let navigate=useNavigate();
   );
 }
 export default Register;
+export {authUserregisterd};

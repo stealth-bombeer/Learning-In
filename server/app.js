@@ -52,7 +52,7 @@ app.post("/register", async (req, res) => {
           password: password,
         });
         console.log("New added");
-        return res.json(1);
+        return res.json({ status: "ok", username });
       }
     }
   } catch (err) {
@@ -89,11 +89,24 @@ app.post("/", async (req, res) => {
   } else {
     if (user.password === password) {
       console.log("Authenticated");
-      return res.json(1);
+      return res.json({ status: "ok", username });
     } else {
       console.log("Incorrect password ");
       return res.json({ status: "password missmatch" });
     }
+  }
+});
+app.post("/scorecard", async (req, res) => {
+  const { score, username, room } = req.body;
+  console.log(req.body);
+  const questionSet = await Question.updateOne(
+    { room: room },
+    { $push: { scoreArray: { username: username, score: score } } }
+  );
+  if (questionSet) {
+    console.log("Room found ");
+  } else {
+    console.log("Room not found ");
   }
 });
 app.get("/quiz1", async (req, res) => {
@@ -102,40 +115,46 @@ app.get("/quiz1", async (req, res) => {
   const questions = await Question.findOne({ room });
   console.log(questions);
   return res.json({ questions });
-  //     console.log("dkbus")
-  //    Question.collection('questions').find({room:room}).toArray((err,result)=>{
-  //     if(err) throw err
-  //     // res.send(result);
-  //     console.log(result);
-  // })
-  // const {username,password}=req.body;
-  // const user=await User.findOne({username});
+});
 
-  // if(!user)
-  // {
-  //     return res.json({error:"User do not exists"});
-  //     console.log("User Do not exist")
-  // }
-  // else
-  // {
-  //     if(user.password===password)
-  //     {
-  //     console.log("Authenticated")
-  //     return res.json(1)
-  //     }
-  //     else
-  //     {console.log("Incorrect password ")
-  //     return res.json({status:"password missmatch"})
-  //     }
-  // }
+app.get("/ranklist", async (req, res) => {
+  console.log(req.headers.room);
+  const { room } = req.headers;
+  const rank = await Question.findOne({ room }, { scoreArray: 1 }).sort({
+    "scoreArray.username": 1,
+  });
+  // const rank=await Question.aggregate([
+  //   ...    { $unwind: "$" },
+  //   ...    { $sort: { "details.Score": 1 } },
+  //   ...    { $group: { _id: "$_id", details: { $push: "$details" } } }
+  //   ... ]);
+  //   const rank=await Question.aggregate(
+  //     // Initial document match (uses index, if a suitable one is available)
+  //     { $match: {
+  //         room:room
+  //     }},
+
+  //     // Expand the scores array into a stream of documents
+  //     { $unwind: '$scoreArray' },
+
+  //     // Filter to 'homework' scores
+  //     // { $match: {
+  //     //     'scores.type': 'homework'
+  //     // }},
+
+  //     // Sort in descending order
+  //     { $sort: {
+  //         'scoreArray.score': -1
+  //     }}
+  // )
+  console.log(rank);
+  return res.json({ rank });
 });
 
 app.post("/joinroom", async (req, res) => {
   const { room } = req.body;
-
   console.log(room);
   const user = await Question.findOne({ room });
-
   if (user) {
     console.log("Room exists");
     return res.json(1);

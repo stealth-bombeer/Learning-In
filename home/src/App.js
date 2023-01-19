@@ -9,6 +9,7 @@ import Home from './Home'
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import Aboutus from '../src/Navbar comp/Aboutus';
 import Createquiz from '../src/mode1.js/Createquiz';
+import RankList from'../src/mode1.js/RankList';
 import Settings from '../src/Navbar comp/Settings';
 import Viewprofile from '../src/Navbar comp/Viewprofile';
 import Joinroom from '../src/mode1.js/Joinroom';
@@ -58,6 +59,7 @@ function App() {
               setCount={setCount}
               />}
                />
+          <Route path="/ranklist" element={<RankList />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/Scorecard" element={<Scorecard score={score}
            count={count}
