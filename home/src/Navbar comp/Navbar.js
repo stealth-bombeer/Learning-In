@@ -47,7 +47,7 @@ const Navbar = () => {
             </Link>
           </span>
           <span className='text-3xl text-gray-600 hover:text-purple-600 duration-200 mr-1 pt-2'>
-            <Link to="viewprofile/">
+            <Link to="profile/">
               <ion-icon name="person-circle-outline"></ion-icon>
             </Link>
           </span>

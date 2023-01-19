@@ -21,6 +21,7 @@ import Scorecard from '../src/mode1.js/Scorecard';
 import Codetimer from '../src/mode1.js/Codetimer';
 import Quiz2 from './mode2.js/Quiz2';
 import Result from './mode2.js/Result/Result';
+import Profile from './Navbar comp/Profile';
 function App() {
 
   const [score, setScore] = useState(0);
@@ -61,6 +62,7 @@ function App() {
               />}
                />
           <Route path="/ranklist" element={<RankList />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/Scorecard" element={<Scorecard score={score}
            count={count}

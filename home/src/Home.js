@@ -13,7 +13,7 @@ const Home = () => {
     navigate("/practice");
   };
   const handleFriends = () => {
-    navigate("/friends");
+    navigate("/viewprofile");
   };
 
   const myStyle = {
