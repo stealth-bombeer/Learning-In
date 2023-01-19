@@ -109,6 +109,22 @@ app.post("/scorecard", async (req, res) => {
     console.log("Room not found ");
   }
 });
+
+app.post("/result", async (req, res) => {
+  const { score1, username} = req.body;
+  console.log(req.body);
+  const questionSet = await User.updateOne(
+    { username: username },
+    { $inc: { totalscore: score1 } }
+  );
+  if (questionSet) {
+    console.log("Room found ");
+  } else {
+    console.log("Room not found ");
+  }
+});
+
+
 app.get("/quiz1", async (req, res) => {
   console.log(req.headers.room);
   const { room } = req.headers;
@@ -117,12 +133,18 @@ app.get("/quiz1", async (req, res) => {
   return res.json({ questions });
 });
 
+app.get("/viewprofile", async (req, res) => {
+  //console.log(req.headers.user);
+  const { username } = req.headers;
+  const personalscore = await User.findOne({ username });
+  console.log(personalscore);
+  return res.json({ personalscore });
+});
+
 app.get("/ranklist", async (req, res) => {
   console.log(req.headers.room);
   const { room } = req.headers;
-  const rank = await Question.findOne({ room }, { scoreArray: 1 }).sort({
-    "scoreArray.username": 1,
-  });
+  const rank = await Question.findOne({ room }).sort({"score": 1});
   // const rank=await Question.aggregate([
   //   ...    { $unwind: "$" },
   //   ...    { $sort: { "details.Score": 1 } },

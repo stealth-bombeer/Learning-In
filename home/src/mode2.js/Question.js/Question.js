@@ -10,12 +10,13 @@ const Question = ({
   questions,
   options,
   correct,
-  setScore,
-  score,
+  setScore1,
+  score1,
   setQuestions,
 }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
+  //const[score,setScore1] = useState(0)
 
   const navigate = useNavigate();
 
@@ -28,7 +29,7 @@ const Question = ({
 
   const handleCheck = (i) => {
     setSelected(i);
-    if (i === correct) setScore(score + 1);
+    if (i === correct) setScore1(score1 + 1);
     setError(false);
   };
 

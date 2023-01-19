@@ -26,17 +26,26 @@ const Ranklist = () => {
 
 
     return (  
- <div className="create">
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere,
-        magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente
-        aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?
-      </h2>
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere,
-        magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente
-        aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?
-      </h2>
+ <div >
+  <p>hii</p>
+  <p>hii</p>
+  <p>hii</p>
+  <p>hii</p>
+  <p>hii</p>
+  <p>hii</p>
+      <table>
+        <tr>
+          <th> Name</th>
+          <th> Score</th>
+          </tr>
+       {rankArray && rankArray.map((n) => (
+        <tr>
+          
+          <td>{n.username}</td>
+          <td>{n.score}</td>
+        </tr>
+      ))}
+    </table>
       </div>
     );
 }

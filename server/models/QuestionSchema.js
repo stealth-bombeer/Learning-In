@@ -5,7 +5,7 @@ const ScoreSchema=new mongoose.Schema({
         type:String
     },
     score:{
-        type:String
+        type:Number
     }
 })
 const QuestionSchema = new mongoose.Schema({

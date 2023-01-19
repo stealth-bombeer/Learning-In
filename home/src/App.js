@@ -28,6 +28,7 @@ function App() {
   const [code,setCode]=useState(1000);
   let [count, setCount] = useState(1);
   const [questions, setQuestions] = useState();
+  const [score1,setScore1]=useState(0);
 
   const fetchQuestions = async (category = "", difficulty = "") => {
     const { data } = await axios.get(
@@ -76,10 +77,10 @@ function App() {
               setTime={setTime}
               code={code}
               setCode={setCode} />} />
-          <Route exact path="/result" element={<Result score={score} />} />
+          <Route exact path="/result" element={<Result score1={score1} setScore1={setScore1} />} />
           <Route exact path="/quiz2" element={<Quiz2 questions={questions}
-              score={score}
-              setScore={setScore}
+              score1={score1}
+              setScore1={setScore1}
               setQuestions={setQuestions}/>} />
         {/* </Route> */}
         </Routes>
