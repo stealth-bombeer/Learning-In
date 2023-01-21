@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
+import {useAuthContext} from '../hooks/useAuthContext'
 import "./Quiz1.css";
 let data, questionArray, timer,x;
 
@@ -21,12 +22,18 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   const [room, setRoom] = useState(null);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
- 
+ const [error,setError]=useState('')
   const [startTimer,setStartTimer]=useState(false);
   const [ans,setAns]= useState(' ');
-  
+  const {user}=useAuthContext()
   const navigate = useNavigate();
   useEffect(() => {
+
+    if(!user)
+    {
+      setError('You must be logged in ')
+      return 
+    }
     setRoom(location.state.room);
     if (room) {
       console.log(room);
@@ -37,7 +44,8 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
           "Content-Type": "application/json",
           Accept: "application/json",
           "Access-Control-Allow-Origin": "*",
-          room: room,
+          'Authorization':`Bearer ${user.accessToken}`,
+          room: room
         },
       })
         .then((res) => {

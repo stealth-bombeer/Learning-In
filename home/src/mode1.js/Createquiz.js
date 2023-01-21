@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {roomCode} from  './Codetimer'
 import {authUser,y} from '../login/Login'
 import {authUserregisterd} from "../login/Register";
+import {useAuthContext} from '../hooks/useAuthContext'
 const Createquiz = ({time,setTime,code,setCode}) => {
 
     
@@ -15,6 +16,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
     const [quest,setQuest]= useState([]);
     const [i,setI]=useState(1);
     const [count,setCount]=useState(0);
+    const [error,setError]=useState('')
     const [counter,setCounter]=useState(0);
     const host={title,opta,optb,optc,optd,ans}
    let room=code
@@ -91,15 +93,22 @@ const Createquiz = ({time,setTime,code,setCode}) => {
        })
     }
 
-
+  const {user}=useAuthContext()
 
     const handleDone  = (e) => {
+
+      if(!user)
+      {
+        setError('You must be logged in ')
+        return ;
+      }
+      console.log(user)
       let admin=authUser?authUser:authUserregisterd;
       e.preventDefault();
       navigate('/home')
       console.log(quest.length)
-      const user = quest;
-      console.log(user)
+      const userii = quest;
+      console.log(userii)
       fetch('http://localhost:5000/createquiz', {
         method: 'POST',
         crossDomain: true,
@@ -107,10 +116,11 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           "Content-Type": "application/json",
           Accept: "application/json",
           "Access-Control-Allow-Origin": "*",
+          'Authorization':`Bearer ${user.accessToken}`
         },
         body: JSON.stringify({
-          adminName:admin,
-          questionArray:user,
+          adminName:user.registeredUser,
+          questionArray:userii,
           room:roomCode,
           timer:time
         })
@@ -123,6 +133,7 @@ const Createquiz = ({time,setTime,code,setCode}) => {
           console.log(data, "questionset-Added")  
           
         })
+      
     }
   
 

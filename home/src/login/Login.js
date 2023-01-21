@@ -1,56 +1,31 @@
 import React from "react";
 import loginImg from "./login.svg";
-import { useState } from "react"
-import { Link,useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.scss";
-let x=false;
-let authUser='';
-let y=5; 
+import { useLogin } from "../hooks/useLogin";
+
+let x = false;
+let authUser = "";
+let y = 5;
 const Login = () => {
-  const [input, setInput] = useState({
-    username:"",
-    password:""
-  })
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [logged, setLogged] = useState(false);
-  const [name,setName]=useState('');
-  const handleSubmit = (e) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { login, error, isLoading } = useLogin();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(input);
-    // console.log(username);
-    fetch('http://localhost:5000/', {
-      method: 'POST',
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify(input)
-    }
-    )
-      .then((res) => {
-       return res.json()
-      })
-      .then((data) => {
-        // setLogged(true);
-        x=true;
-        console.log(data, "Logged-In")
-        if(data.status==='ok')
-   { authUser=data.username;
-    console.log(authUser);
-    navigate('/home');}
-        console.log(x);
+    console.log(username);
+    await login(username, password);
+  };
 
-      })
-  }
-
-// console.log(x);
   return (
     <div className="base-container">
       <div className="header">Login</div>
       <div>
-        <form >
+        <form>
           <div className="content">
             <div className="image">
               <img src={loginImg} />
@@ -58,32 +33,50 @@ const Login = () => {
             <div className="form">
               <div className="form-group">
                 <label htmlFor="username">Username</label>
-                <input type="text" name="username" placeholder="username" value={input.username} onChange={(e) => {
-                  setInput({...input, [e.target.name]:e.target.value});console.log(input.username);
-                }} />
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" value={input.password} placeholder="password" onChange={(e) => {
-                  setInput({...input, [e.target.name]:e.target.value});console.log(input.password);
-                }} />
+                <input
+                  type="password"
+                  name="password"
+                  value={password}
+                  placeholder="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
               </div>
             </div>
           </div>
-          <div className="footer">
-            <button  onClick={handleSubmit} type="submit" className="btn">
+          <div className=" footer ">
+            <div class="m-auto">
+            <button
+              onClick={handleSubmit}
+              disabled={isLoading}
+              type="submit"
+              className="btn m-auto "
+            >
               Login
             </button>
-
+            </div>
           </div>
         </form>
       </div>
-
+     
+  <div class="m-auto">
+     New here ?<a href='/register'>Register</a>
+  
+</div>
     </div>
   );
-}
+};
 
 export default Login;
-export {x};
-export{authUser};
-export {y};
+export { x };
+export { authUser };
+export { y };

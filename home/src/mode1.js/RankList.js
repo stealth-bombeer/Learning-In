@@ -1,5 +1,15 @@
+import { useState, useEffect } from "react";
 import {room} from  './Joinroom'
+import {useAuthContext} from '../hooks/useAuthContext'
 const Ranklist = () => {
+  const [error,setError]=useState('')
+  const {user}=useAuthContext()
+  if(!user)
+    {
+      setError('You must be logged in ')
+      return 
+    }
+
     let rankArray;
   console.log(room);
     fetch("http://localhost:5000/ranklist", {
@@ -9,6 +19,7 @@ const Ranklist = () => {
           "Content-Type": "application/json",
           Accept: "application/json",
           "Access-Control-Allow-Origin": "*",
+          'Authorization':`Bearer ${user.accessToken}`,
           room:room,
         },
       })
