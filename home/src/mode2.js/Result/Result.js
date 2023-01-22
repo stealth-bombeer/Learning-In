@@ -5,23 +5,19 @@ import { useNavigate } from "react-router-dom";
 import {authUser,y} from '../../login/Login'
 import {authUserregisterd} from "../../login/Register";
 import "./Result.css";
-//import {score1} from "../Quiz2"
-//import { MyContext } from '../Quiz2';
-
 
 const Result = ({score1, setScore1}) => {
   const navigate = useNavigate();
   
-  //const score1 = useContext(MyContext);
+  
   console.log('hii')
   const handleHome = (e) => {
     e.preventDefault();
     console.log({score1})
-   setScore1(0);
     navigate('/home');
     setScore1(0);
   };
-  //console.log({score1})
+  
   let user=authUser?authUser:authUserregisterd;
 
   fetch('http://localhost:5000/result', {
@@ -33,7 +29,7 @@ const Result = ({score1, setScore1}) => {
       "Access-Control-Allow-Origin": "*",
     },
     body: JSON.stringify({
-      score1:`${score1/2}`,
+      score1:`${score1}`,
       username:user
     })
   }
@@ -45,9 +41,6 @@ const Result = ({score1, setScore1}) => {
       console.log(data, "Score updated")  
 
     })
- 
-
-
  
 
   return (

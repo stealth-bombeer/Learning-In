@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Question.css";
 
-
 const Question = ({
   currQues,
   setCurrQues,
@@ -19,7 +18,6 @@ const Question = ({
   //const[score,setScore1] = useState(0)
 
   const navigate = useNavigate();
-
 
   const handleSelect = (i) => {
     if (selected === i && selected === correct) return "select";
@@ -42,20 +40,15 @@ const Question = ({
     } else setError("Please select an option first");
   };
 
-  const handleQuit = () => {
-    navigate("/result");
-    setCurrQues(0);
-    setQuestions();
-  };
+  function handleQuit() {}
 
   return (
     <div className="question">
       <h1>Question {currQues + 1} :</h1>
 
       <div className="singleQuestion">
-        <h2 >{questions[currQues].question}</h2>
+        <h2>{questions[currQues].question}</h2>
         <div className="options">
-         
           {options &&
             options.map((i) => (
               <button
@@ -75,7 +68,11 @@ const Question = ({
             size="large"
             style={{ width: 185 }}
             //href="/result"
-            onClick={() => handleQuit()}
+            onClick={() => {
+              navigate("/result");
+              setCurrQues(0);
+              setQuestions();
+            }}
           >
             Quit
           </button>

@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import {room} from  './Joinroom'
 const Ranklist = () => {
+    //const [rankArray,setRankArray]=useState([]);
+    const [ra,setRa]=useState([]);
     let rankArray;
-  console.log(room);
+  //console.log(room);
     fetch("http://localhost:5000/ranklist", {
         method: "GET",
         crossDomain: true,
@@ -16,13 +19,26 @@ const Ranklist = () => {
           return res.json();
         })
         .then((data) => {
-          console.log(data.rank.scoreArray, "Ranklist-Received");
+          //console.log(data.rank.scoreArray, "Ranklist-Received");
           rankArray=data.rank.scoreArray;
-          rankArray.map((pos)=>
-          {
-            console.log(pos.username," ",pos.score)
-          })
+         //setRankArray(data.rank.scoreArray);
+         //setRa(rankArray)
+         //console.log(rankArray)
+        //  rankArray.map((pos)=>
+        //    {
+        //      console.log(pos.username," ",pos.score)
+        //    })
         });
+        //console.log(rankArray)
+        // rankArray.map((pos)=>
+        //   {
+        //     console.log(pos.username," ",pos.score)
+        //   })
+
+          // const ra = rankArray.map((pos) =>
+          
+          //   <li>{pos.username}</li>
+          // );
 
 
     return (  
@@ -33,19 +49,8 @@ const Ranklist = () => {
   <p>hii</p>
   <p>hii</p>
   <p>hii</p>
-      <table>
-        <tr>
-          <th> Name</th>
-          <th> Score</th>
-          </tr>
-       {rankArray && rankArray.map((n) => (
-        <tr>
-          
-          <td>{n.username}</td>
-          <td>{n.score}</td>
-        </tr>
-      ))}
-    </table>
+  <p>{rankArray[1]}Hii</p>
+     
       </div>
     );
 }

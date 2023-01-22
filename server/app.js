@@ -80,6 +80,7 @@ app.post("/createquiz", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  console.log(req.method)
   const { username, password } = req.body;
   const user = await User.findOne({ username });
 
@@ -111,11 +112,12 @@ app.post("/scorecard", async (req, res) => {
 });
 
 app.post("/result", async (req, res) => {
+  console.log(req.method)
   const { score1, username} = req.body;
   console.log(req.body);
-  const questionSet = await User.updateOne(
+  const questionSet =await User.updateOne(
     { username: username },
-    { $inc: { totalscore: score1 } }
+    { $push: { score_arr: { indiv_score: score1 } },$inc: { totalscore: score1 }  }
   );
   if (questionSet) {
     console.log("Room found ");
@@ -141,10 +143,18 @@ app.get("/viewprofile", async (req, res) => {
   return res.json({ personalscore });
 });
 
+app.get("/profile", async (req, res) => {
+  //console.log(req.headers.user);
+  const { username } = req.headers;
+  const info = await User.findOne({ username });
+  //console.log(info);
+  return res.json({ info });
+});
+
 app.get("/ranklist", async (req, res) => {
   console.log(req.headers.room);
   const { room } = req.headers;
-  const rank = await Question.findOne({ room }).sort({"score": 1});
+  const rank = await Question.findOne({ room });
   // const rank=await Question.aggregate([
   //   ...    { $unwind: "$" },
   //   ...    { $sort: { "details.Score": 1 } },
@@ -169,7 +179,7 @@ app.get("/ranklist", async (req, res) => {
   //         'scoreArray.score': -1
   //     }}
   // )
-  console.log(rank);
+  //console.log(rank);
   return res.json({ rank });
 });
 

@@ -1,4 +1,11 @@
 const mongoose = require('mongoose');
+
+const ScorearrSchema=new mongoose.Schema({
+    indiv_score:{
+        type:Number
+    }
+})
+
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -17,7 +24,8 @@ const UserSchema = new mongoose.Schema({
     },
     totalscore: {
         type: Number,
-    }
+    },
+    score_arr:[ScorearrSchema]
 })
 
 //collection:-Register
