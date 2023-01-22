@@ -1,0 +1,70 @@
+
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
+.content {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+    
+  }
+  
+  .settings {
+    width: 45%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  
+  .banner {
+    width: 95%;
+    align-self: center;
+    padding: 8px;
+  }
+  
+  @media (max-width: 800px) {
+    .content {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .banner {
+      width: 85%;
+      padding: 0;
+      padding-top: 20px;
+    }
+    .settings {
+      width: 100%;
+    }
+  }
+  
+  .settings__select {
+    display: flex;
+    flex-direction: column;
+    padding: 40px ;
+    width: 400%;
+    flex: 0.8;
+    justify-content: flex-start;
+  }
+  .prac button {
+    display: inline-block;
+    border-radius: 12px;
+    background-color:rgb(8 145 178);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 15px 32px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    box-shadow: 0 8px 16px 0 rgba(112, 174, 250, 0.2), 0 6px 20px 0 rgba(56, 108, 180, 0.19);
+  }
+  
+  .prac button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }

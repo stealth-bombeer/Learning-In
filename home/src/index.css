@@ -1,0 +1,46 @@
+.create {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  margin-top:80px;
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 2px solid rgb(155, 149, 149);
+  box-sizing: border-box;
+  display: block;
+}
+.create button {
+  display: inline-block;
+  border-radius: 12px;
+  background-color:rgb(8 145 178);
+  border: 4px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 15px 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  box-shadow: 0 8px 16px 0 rgba(112, 174, 250, 0.2), 0 6px 20px 0 rgba(56, 108, 180, 0.19);
+}
+.create button:hover {
+  background-color:#FFFFFF;
+  color:#0e7490;
+}
+
+
+
+
