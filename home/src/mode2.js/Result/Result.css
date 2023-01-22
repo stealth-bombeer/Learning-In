@@ -1,7 +1,332 @@
 .result {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   height: 60vh;
   text-align: center;
+  
 }
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One");
+@keyframes text-scale {
+  50% {
+    transform: scale(1); }
+  90% {
+    transform: scale(0.8); }
+  100% {
+    transform: scale(1); } }
+
+@keyframes scale {
+  0% {
+    transform: scale(0); }
+  30% {
+    transform: scale(1.5); }
+  50% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(0); } }
+
+@keyframes up {
+  10% {
+    top: 110px; }
+  60% {
+    top: -300px; }
+  100% {
+    top: -300px; } }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+
+.wrap {
+  position: relative;
+  height: 300px;
+  overflow: hidden; }
+  .wrap .round {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    width: 166px;
+    height: 166px;
+    border: 5px solid #313163;
+    border-radius: 100%;
+    background: #1d5ea1;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: all 0.5s;
+    transform: scale(0);
+    animation: scale 4s 1 cubic-bezier(0.755, 0.05, 0.855, 0.06); }
+  .wrap .star {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    right: auto;
+    bottom: auto;
+    font-family: 'Arial';
+    font-size: 10px;
+    color: #fff; }
+    .wrap .star:nth-of-type(2) {
+      position: absolute;
+      top: 30px;
+      left: auto;
+      right: 40px;
+      bottom: auto; }
+    .wrap .star:nth-of-type(3) {
+      position: absolute;
+      top: 80px;
+      left: auto;
+      right: 30px;
+      bottom: auto; }
+
+.rocket {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  margin: 0 auto;
+  width: 67px;
+  height: 86px;
+  animation: up 4s 1 cubic-bezier(0.755, 0.05, 0.855, 0.06); }
+  .rocket .center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+    .rocket .center:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      width: 16px;
+      height: 500px;
+      border: 5px solid #313163;
+      border-radius: 0;
+      background: #fff;
+      margin: 0 auto; }
+    .rocket .center .body {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      width: 31px;
+      height: 86px;
+      border: 5px solid #313163;
+      border-radius: 100px 100px 0 0/200px 200px 0 0;
+      background: #e7efff;
+      margin: 0 auto; }
+      .rocket .center .body span {
+        display: block;
+        padding-top: 10px;
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center; }
+      .rocket .center .body:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: auto;
+        left: -9px;
+        right: auto;
+        bottom: -15px;
+        width: 40px;
+        height: 15px;
+        border: 5px solid #313163;
+        border-radius: 0;
+        background: #2e7ba0;
+        background-image: linear-gradient(90deg, #2e7ba0 0%, #2e7ba0 10%, #313163 11%, #313163 40%, #2e7ba0 41%, #2e7ba0 60%, #313163 61%, #313163 90%, #2e7ba0 91%, #2e7ba0 100%); }
+    .rocket .center .wing {
+      position: absolute;
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: 0;
+      width: 26px;
+      height: 33px;
+      border: 5px solid #313163;
+      border-radius: 100% 0% 0% 0%;
+      background: #e7efff; }
+      .rocket .center .wing.left {
+        left: -4px;
+        background-image: linear-gradient(90deg, #ff8460 0%, #ff8460 20%, #313163 21%, #313163 40%, #f6d99c 41%, #f6d99c 60%, #313163 61%, #313163 80%, #499bbf 81%, #499bbf 100%); }
+      .rocket .center .wing.right {
+        right: -4px;
+        border-radius: 0% 100% 0% 0%;
+        background-image: linear-gradient(-90deg, #ff8460 0%, #ff8460 20%, #313163 21%, #313163 40%, #f6d99c 41%, #f6d99c 60%, #313163 61%, #313163 80%, #499bbf 81%, #499bbf 100%); }
+  .rocket .side {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 55px;
+    border: 5px solid #313163;
+    border-radius: 50% 50% 0 0;
+    background: #e7efff; }
+    .rocket .side.left {
+      left: 47px; }
+    .rocket .side.right {
+      right: 47px; }
+    .rocket .side .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      width: 100%;
+      height: 20px;
+      border: 5px solid #313163;
+      border-radius: 50% 50% 0 0;
+      background: #ffda76;
+      border-width: 0 0 5px 0; }
+
+.cloud {
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  z-index: 2; }
+  .cloud div {
+    border: 5px solid #313163;
+    border-width: 5px 0px 0px 0px;
+    border-radius: 100%; }
+  .cloud .c1 {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #fff; }
+  .cloud .c2 {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #fff; }
+  .cloud .c3 {
+    position: absolute;
+    bottom: 20px;
+    left: 45px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #fff;
+    transform: rotate(20deg); }
+  .cloud .c4 {
+    position: absolute;
+    bottom: 0px;
+    left: 50px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #e8f1fe; }
+  .cloud .c5 {
+    position: absolute;
+    bottom: 0px;
+    left: 65px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #e8f1fe;
+    z-index: 3; }
+    .cloud .c5:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: -20px;
+      right: auto;
+      bottom: auto;
+      width: 70px;
+      height: 70px;
+      border-radius: 70px;
+      background: #e8f1fe; }
+  .cloud .c6 {
+    position: absolute;
+    bottom: -5px;
+    left: 85px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #e8f1fe;
+    transform: rotate(-20deg); }
+  .cloud .c7 {
+    position: absolute;
+    bottom: 20px;
+    left: 80px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #fff; }
+  .cloud .c8 {
+    position: absolute;
+    bottom: 20px;
+    left: 105px;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background: #fff; }
+  .cloud .c9 {
+    position: absolute;
+    bottom: 20px;
+    left: 125px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background: #fff; }
+
+h1 {
+  position: relative;
+  top: -159px;
+  font-family: 'Fjalla One';
+  font-size: 50px;
+  font-weight: bold;
+  color: #313163;
+  text-align: center;
+  text-transform: uppercase;
+  transform: scale(0);
+  transition: all 0.5s;
+  animation: text-scale 2s 1 cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-delay: 3s;
+  animation-fill-mode: forwards; }
+
+h2 {
+  position: relative;
+  top: -150px;
+  font-family: 'Arial';
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  transform: scale(0);
+  transition: all 0.5s;
+  animation: text-scale 2s 1 cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-delay: 3s;
+  animation-fill-mode: forwards; }
+
+.comment {
+  padding-bottom: 100px;
+  font-size: 14px;
+  text-align: center; }
+  .comment p {
+    padding-bottom: 10px; }
+  .comment iframe {
+    display: block;
+    margin: 0 auto;
+    background: #fff; }

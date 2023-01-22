@@ -25,9 +25,7 @@ const Login = () => {
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
       },
-      body: JSON.stringify(input
-
-      )
+      body: JSON.stringify(input)
     }
     )
       .then((res) => {
@@ -84,7 +82,8 @@ const Login = () => {
     // </div>
 
   //   
-<div class="devb">
+<div className="pb-96">
+<div class="devb ">
   <div class="login-box">
   <h2>Login</h2>
   <form>
@@ -115,7 +114,7 @@ const Login = () => {
 </div>
 
   
-      
+</div>      
 </div>
   );
 }

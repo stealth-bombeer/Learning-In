@@ -22,7 +22,7 @@ const Codetimer = ({time,setTime,code,setCode}) => {
     backgroundImage:
         "url('https://wallpapercave.com/wp/wp6638441.png')",
     height: '120vh',
-    marginTop: '60px',
+    marginTop: '10px',
     fontSize: '50px',
     backgroundSize: 'cover',
     width: '100%',
@@ -31,12 +31,12 @@ const Codetimer = ({time,setTime,code,setCode}) => {
 };
   return (
     <div style={myStyle}>
-    <div className="codetimer pt-40">
+    <div className="codetimer pt-40 ">
       
       <div class="flex justify-center ">
-        <div class="rounded-lg shadow-lg bg-white max-w-sm">
+        <div class="rounded-lg shadow-lg bg-white max-w-sm ">
 
-          <div class="p-6">
+          <div class="p-16">
 
 
            
@@ -74,11 +74,11 @@ const Codetimer = ({time,setTime,code,setCode}) => {
             <div className="">
               <label className="text-lg font-Playfair Display  font-bold text-cyan-800">SELECT YOUR TIME PER QUESTION:</label>
               <div className="flex flex-row">
-              <div class="flex flex-wrap justify-start ">
-                <img src="https://th.bing.com/th/id/OIP.7u5lyTHC-QeTgK7BeAaS7AHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="p-1 bg-white border rounded  h-32 w-32" />
+              <div class="flex flex-wrap justify-start  ">
+                <img src="https://th.bing.com/th/id/OIP.7u5lyTHC-QeTgK7BeAaS7AHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="p-1 bg-white border rounded  h-32 " />
               </div>
               <div >
-                <div className=" pt-10 ml-20  text-2xl font-bold ">
+                <div className=" pt-10 ml-10   text-2xl font-bold ">
                   <select
                     value={time}
                     required

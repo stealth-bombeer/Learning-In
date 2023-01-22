@@ -332,23 +332,26 @@ const Createquiz = ({time,setTime,code,setCode}) => {
       backgroundSize: 'contain',
       width: '100%',
       backgroundRepeat: 'no-repeat',
-  
+      
   };
 
     return ( 
-      
+   
     <div className=" grid grid-cols-3">
       <div className="col-span-1 bg-center">
     <div style={myStyle}>
    </div>
    </div>
-   <div className="create col-span-2 pl-60 pt-10">
+   <div className="create col-span-2 pl-60 pt-8">
+  <div class="flex justify-center">
+  <div class="flex flex-col md:flex-row md:max-w-xl p-16 rounded-lg bg-white shadow-lg">
+    
     <form>
     <div>
     
-      <p>{parseInt(count)+1}</p>
+      
       <div>
-      <label className="bold pt-10 text-2xl font-Playfair Display  font-bold text-cyan-800 text-area:width-">ADD THE QUESTION:</label>
+      <label className="bold  text-2xl font-Playfair Display  font-bold text-cyan-800 text-area:width-">ADD THE QUESTION:</label>
       <textarea className="w-500%
         px-3
         py-1.5
@@ -420,15 +423,23 @@ const Createquiz = ({time,setTime,code,setCode}) => {
         </select>
       </div>
       <div className="pt-10 flex justify-items-center">
+      <div className="mr-10">
       <button  onClick={handlePrev} >prev</button>
-      <button onClick={handleNext}>next</button>
+      </div>
+      <div className="mr-10">
       {<button onClick={handleDone}>Done</button> }
+      </div>
+      
+      <button onClick={handleNext}>next</button>
+    
+      
       </div>
     </form>
     
   </div> 
   </div>
- 
+ </div>
+ </div>
   );
 }
  
