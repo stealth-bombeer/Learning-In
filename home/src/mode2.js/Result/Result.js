@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import React, {createContext, useContext} from 'react';
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
 import {authUser,y} from '../../login/Login'
 import {authUserregisterd} from "../../login/Register";
@@ -8,8 +9,8 @@ import "./Result.css";
 
 const Result = ({score1, setScore1}) => {
   const navigate = useNavigate();
-  
-  
+  const {user}=useAuthContext()
+  const [error,setError]=useState()
   console.log('hii')
   const handleHome = (e) => {
     e.preventDefault();
@@ -18,7 +19,12 @@ const Result = ({score1, setScore1}) => {
     setScore1(0);
   };
   
-  let user=authUser?authUser:authUserregisterd;
+  // let user=authUser?authUser:authUserregisterd;
+  if(!user)
+  {
+        setError('You must be logged in')
+        return 
+  }
 
   fetch('http://localhost:5000/result', {
     method: 'POST',
@@ -27,10 +33,11 @@ const Result = ({score1, setScore1}) => {
       "Content-Type": "application/json",
       Accept: "application/json",
       "Access-Control-Allow-Origin": "*",
+      'Authorization':`Bearer ${user.accessToken}`
     },
     body: JSON.stringify({
       score1:`${score1}`,
-      username:user
+      username:user.registeredUser
     })
   }
   )

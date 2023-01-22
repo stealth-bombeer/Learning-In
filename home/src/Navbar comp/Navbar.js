@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-
-
+import {useLogout} from '../hooks/useLogout'
+import {useAuthContext} from'../hooks/useAuthContext'
 
 const Navbar = () => {
-
+const {logout}=useLogout()
+const {user}=useAuthContext()
+  const handleClick=()=>
+  {
+        logout();
+  }
 
 
 
@@ -24,13 +29,21 @@ const Navbar = () => {
           <ion-icon name={open ? 'close' : 'menu'}></ion-icon>
         </div>
 
-        <div className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
-
+        <div className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}> 
+        {user && 
+          (<div>
+      <span>
+        {user.registeredUser}
+        </span>
+        
           <span className='text-gray-800 hover:text-purple-600 duration-200' >
-            <Link to="home/">
-              <button>Home</button>
-            </Link>
+
+            <button onClick={handleClick}>Log Out</button>
           </span>
+          </div>)}
+
+          {user && 
+          (<div>
           <span className='text-gray-800 hover:text-purple-600 duration-200' >
             <Link to="codetimer/">
               <button>Create A Quiz</button>
@@ -51,7 +64,7 @@ const Navbar = () => {
               <ion-icon name="person-circle-outline"></ion-icon>
             </Link>
           </span>
-
+ </div>)}
         </div>
       </div>
     </div>

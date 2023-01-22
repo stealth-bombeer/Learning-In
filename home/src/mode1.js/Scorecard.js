@@ -1,5 +1,6 @@
-import { useState, useEffect,useRef } from "react";
+import { useState, useEffect,useRef} from "react";
 import { useLocation } from "react-router-dom";
+import {useAuthContext} from '../hooks/useAuthContext'
 import {useNavigate} from'react-router-dom'
 import {room} from  './Joinroom'
 import {authUser,y} from '../login/Login'
@@ -7,8 +8,7 @@ import {authUserregisterd} from "../login/Register";
 
 const Scorecard = ({score,count,setCount}) => {
   const navigate=useNavigate();
-  const dataFetchedRef = useRef(false)
-
+  const dataFetchedRef = useRef(false);
   const handleClick =(e) => {
     e.preventDefault();
     navigate('/home')
@@ -17,10 +17,17 @@ const Scorecard = ({score,count,setCount}) => {
     e.preventDefault();
     navigate('/ranklist')
   } 
-let user=authUser?authUser:authUserregisterd;
+  const [error,setError]=useState('')
+  const {user}=useAuthContext()
+// let user=authUser?authUser:authUserregisterd;
 console.log(user);
  useEffect(()=>
  {
+  if(!user)
+    {
+      setError('You must be logged in ')
+      return 
+    }
   if (dataFetchedRef.current) return;
   dataFetchedRef.current = true;
   console.log(score);
@@ -34,10 +41,11 @@ console.log(user);
       "Content-Type": "application/json",
       Accept: "application/json",
       "Access-Control-Allow-Origin": "*",
+      'Authorization':`Bearer ${user.accessToken}`
     },
     body: JSON.stringify({
       score:score,
-      username:user,
+      username:user.registeredUser,
       room:room
     })
   }
@@ -47,10 +55,9 @@ console.log(user);
     })
     .then((data) => {
       console.log(data, "questionset-Added")  
-
+      
     })
  });
-
     return ( 
      <div>
         <p>dfhhhlfkwj</p>

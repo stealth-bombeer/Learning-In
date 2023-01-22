@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {useAuthContext} from '../hooks/useAuthContext'
 
 let room;
 const Joinroom = () => {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
+  const [error,setError]=useState('')
+  const {user}=useAuthContext()
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(!user)
+    {
+      setError('You must be looged in ')
+      return 
+    }
     room = code;
     console.log(room);
     fetch("http://localhost:5000/joinroom", {
@@ -17,6 +24,7 @@ const Joinroom = () => {
         "Content-Type": "application/json",
         Accept: "application/json",
         "Access-Control-Allow-Origin": "*",
+        'Authorization':`Bearer ${user.accessToken}`
       },
       body: JSON.stringify({ room: room }),
     })

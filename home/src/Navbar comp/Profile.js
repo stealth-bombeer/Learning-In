@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {authUser,y} from '../login/Login'
 import {authUserregisterd} from "../login/Register";
+import { useAuthContext } from '../hooks/useAuthContext';
 
 const Profile = () => {
     let noftest;
@@ -8,7 +9,8 @@ const Profile = () => {
     const [email, setEmail] = useState(null);
     const [totsc, setTotsc] = useState(0);
     const [n,setN]= useState(0);
-    let user = authUser ? authUser : authUserregisterd;
+    // let user = authUser ? authUser : authUserregisterd;
+    const {user}=useAuthContext()
 
     fetch("http://localhost:5000/profile", {
     method: "GET",
@@ -17,7 +19,8 @@ const Profile = () => {
       "Content-Type": "application/json",
       Accept: "application/json",
       "Access-Control-Allow-Origin": "*",
-      username: user,
+      'Authorization':`Bearer ${user.accessToken}`,
+      username: user.registeredUser,
     },
   })
     .then((res) => {

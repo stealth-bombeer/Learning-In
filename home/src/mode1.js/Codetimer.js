@@ -1,22 +1,26 @@
-import { useState,useRef } from "react";
+import { useState,useRef} from "react";
 import { useNavigate } from "react-router-dom";
 import Createquiz from "./Createquiz";
-// import uuid from 'uuid';
 const { v4:uuid } = require('uuid');
 const roomCode=uuid().slice(0,5);
+
 const Codetimer = ({time,setTime,code,setCode}) => {
-    
-   
+
+   const [quiztime,setQuiztime]=useState()
     const navigate=useNavigate();
   
     const handleSubmit=(e)=>{
-    //    <Createquiz
-    //    time={time}
-    //    setTime={setTime}
-    //    />
     e.preventDefault();
-    setCode(code+1);
+    console.log(quiztime)
+     if(!quiztime)
+     { 
+      alert(`Please enter time `)
+      return ;
+     }
+     else{
+      setTime(quiztime)
        navigate("/createquiz");
+     }
     }
    
        return ( 
@@ -30,9 +34,9 @@ const Codetimer = ({time,setTime,code,setCode}) => {
 
             <label>Select Time per quest:</label>
         <select
-          value={time}
+          value={quiztime}
           required
-          onChange={(e) => setTime(e.target.value)}
+          onChange={(e) => setQuiztime(e.target.value)}
         >
           <option value="None">None</option>
           <option value="5">5</option>

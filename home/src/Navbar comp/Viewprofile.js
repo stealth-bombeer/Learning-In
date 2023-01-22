@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { authUser, y } from "../login/Login";
 import { authUserregisterd } from "../login/Register";
 import "./Viewprofile.css";
+import { useAuthContext } from '../hooks/useAuthContext';
 import {Chart,defaults} from 'chart.js/auto';
 
 import { Line } from 'react-chartjs-2';
 
 const Viewprofile = () => {
-  let user = authUser ? authUser : authUserregisterd;
+  // let user = authUser ? authUser : authUserregisterd;
+  const {user}=useAuthContext()
   let scorearr;
   //let onscore=[];
   const [onscore,setOnscore]=useState([]);
@@ -22,7 +24,8 @@ const Viewprofile = () => {
       "Content-Type": "application/json",
       Accept: "application/json",
       "Access-Control-Allow-Origin": "*",
-      username: user,
+      'Authorization':`Bearer ${user.accessToken}`,
+      username: user.registeredUser,
     },
   })
     .then((res) => {
