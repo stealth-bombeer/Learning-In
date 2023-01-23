@@ -33,31 +33,32 @@ const Joinroom = () => {
     }
     const myStyle = {
       backgroundImage:
-          "url('https://smartvco.com/wp-content/uploads/2018/10/webinars.png')",
+          "url('https://newsroom.unsw.edu.au/sites/default/files/thumbnails/image/shutterstock_408729628_1.jpg')",
       height: '120vh',
-      marginTop: '60px',
+      marginTop: '10px',
       fontSize: '50px',
       backgroundSize: 'cover',
       width: '100%',
       backgroundRepeat: 'no-repeat',
-  
+      
   };
 
     return ( 
       <div style={myStyle}>
+      
     <div className="create" >
     <div className="pt-64">
-    <div classname="container mx-auto">
+    <div classname="container mx-auto " >
     <form onSubmit={handleSubmit}>  
      
        <div className="content-center place-content-center">
        <div class="  flex justify-center">
-                        <div class="rounded-lg  shadow-lg bg-white max-w-sm">
+                        <div class="rounded-lg  shadow-2xl bg-white max-w-sm">
                             
                             <div class="p-6">
                    
         <div>
-       <div className="text-4xl text-black-500 hover:text-gray-500">
+       <div className="text-4xl text-black hover:text-black">
        <label >Enter the Room Code:</label>
        </div>
       <input 
@@ -79,10 +80,10 @@ const Joinroom = () => {
     </form>
     </div>
                             
-                            </div>
-                      </div>
-                      
+      </div>
     </div>
+       </div>
+    
      );
 }
  

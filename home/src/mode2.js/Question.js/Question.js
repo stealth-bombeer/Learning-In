@@ -49,10 +49,10 @@ const Question = ({
 
   return (
     <div className="question">
-      <h1>Question {currQues + 1} :</h1>
+      <h3>Question {currQues + 1} :</h3>
 
       <div className="singleQuestion">
-        <h2 >{questions[currQues].question}</h2>
+        <h4 >{questions[currQues].question}</h4>
         <div className="options">
          
           {options &&
@@ -68,7 +68,7 @@ const Question = ({
             ))}
         </div>
         <div className="controls">
-          <button
+          <button className="inline-block px-2 py-2.5  bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
             variant="contained"
             color="secondary"
             size="large"
@@ -78,7 +78,7 @@ const Question = ({
           >
             Quit
           </button>
-          <button
+          <button className="inline-block px-2 ml-4 py-2.5 bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
             variant="contained"
             color="primary"
             size="large"

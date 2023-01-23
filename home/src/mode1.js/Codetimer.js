@@ -44,7 +44,7 @@ const Codetimer = ({time,setTime,code,setCode}) => {
 
             <div className="">
               <div>
-                <h1 className="text-2xl font-Playfair Display  font-bold text-cyan-800">Room Code is: {code + 1}</h1>
+                <h5 className="text-2xl font-Playfair Display  font-bold text-cyan-800">Room Code is: {code + 1}</h5>
               </div>
               <textarea
                 class="inline-block

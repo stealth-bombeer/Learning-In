@@ -39,11 +39,11 @@
   }
   .parallax2 {
     background: url("https://www.upr.org/sites/upr/files/styles/medium/public/201804/0_12.jpg");
-    min-height: 100%;
+    min-height: 90%;
   }
   .parallax3 {
-    background: url("https://dpi.wi.gov/sites/default/files/imce/online-blended-learning/_images/kids_computer.jpg");
-    min-height: 60%;
+    background: url("");
+    min-height: 100%;
   }
   .parallax4 {
     background: url("http://www.qs.com/wp-content/uploads/2015/07/student-subject-choices-stem-drift-bobbed.jpg");
@@ -54,7 +54,7 @@
     min-height: 100%;
   }
   .parallax6 {
-    background: url("https://quotefancy.com/media/wallpaper/3840x2160/2016858-Confucius-Quote-Knowledge-without-practice-is-useless-Practice.jpg");
+    background: url("https://dpi.wi.gov/sites/default/files/imce/online-blended-learning/_images/kids_computer.jpg");
     min-height: 100%;
   }
   .parallax1, .parallax2, .parallax3, .parallax4, .parallax5, .parallax6 {

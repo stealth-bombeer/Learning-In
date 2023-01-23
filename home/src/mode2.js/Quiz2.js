@@ -36,21 +36,24 @@ const Quiz2 = ({ questions, score, setScore, setQuestions }) => {
 
   return (
     <div style={myStyle}>
-    <div class="flex justify-around mt-10">
-    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-4xl ">
+    <div class="flex justify-around mt-10  ">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-4xl  ">
     <div className="quiz">
-        
+        <div className="font-sans text-slate-600">
       <span className="subtitle">Welcome, {name}</span>
-
+      </div>
+      
       {questions ? (
         <>
-          <div className="quizInfo">
+          <div className="quizInfo text-cyan-700 font-sans font-black text-lg mt-24">
             <span>{questions[currQues].category}</span>
             <span>
               {/* {questions[currQues].difficulty} */}
               Score : {score}
             </span>
+          
           </div>
+          <div className="text-black font-serif mt-6">
           <Question
             currQues={currQues}
             setCurrQues={setCurrQues}
@@ -61,6 +64,7 @@ const Quiz2 = ({ questions, score, setScore, setQuestions }) => {
             setScore={setScore}
             setQuestions={setQuestions}
           />
+          </div>
         </>
       ) : (
         <CircularProgress

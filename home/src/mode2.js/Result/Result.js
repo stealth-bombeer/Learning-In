@@ -8,11 +8,15 @@ const Result = ({score }) => {
 
   const myStyle = {
     
-    height: '100vh',
-    backgroundcolor:'white',
-    backgroundSize: '100% 100%',
-    width: '100%',
-    backgroundRepeat: 'no-repeat',
+    backgroundImage:
+          "url('https://wallpapercave.com/wp/wp3222370.jpg')",
+      height: '100vh',
+      marginTop: '10px',
+      fontSize: '10px',
+      backgroundSize: '200% 200%',
+      width: '100%',
+      backgroundRepeat: 'no-repeat',
+      
     
     
 };
@@ -24,8 +28,8 @@ const Result = ({score }) => {
   // }, [name, navigate ]);
 
   return (
-    <div style={myStyle}>
-<body class="ress">
+     <div style={myStyle}>
+      
     
 <div className="result">
   <div className="mt-48">
@@ -36,8 +40,8 @@ const Result = ({score }) => {
     <div class="star">✭</div>
     
     <div class="rocket">
-      <div class="center">
-        <div class="body">
+      <div class="center1">
+        <div class="body1">
           <span>Z</span>
         </div>
         <div class="wing left"></div>
@@ -73,10 +77,11 @@ const Result = ({score }) => {
     <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://tse3.mm.bing.net/th?id=OIP.xdkQtGgRvyUF8js8-dtNIQHaHa&pid=Api&P=0" alt="" />
     <div class="p-6 flex flex-col justify-start">
       <h5 class="text-gray-900 text-xl font-medium mb-2">FINAL SCORE</h5>
-<p class="text-black-700 text-base text-xl mb-4">
+<p class="text-black text-base text-xl mb-4">
       <span className="title">{score}</span>
       </p>
-      <button
+      <button class="bg-transparent hover:bg-blue-900 text-lg text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+  
         variant="contained"
         color="secondary"
         size="large"
@@ -90,7 +95,7 @@ const Result = ({score }) => {
   </div>
 </div>
 </div>
-</body>
+
 </div>
   );
 };

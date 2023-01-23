@@ -139,8 +139,25 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
     setSeconds(0);
     
   };
+  const myStyle = {
+    backgroundImage:
+        "url('https://l450v.alamy.com/450v/2k4wept/frequently-asked-questions-hand-drawn-question-marks-and-text-faq-on-yellow-2k4wept.jpg')",
+    height: '100vh',
+    backgroundcolor:'white',
+    backgroundSize: '100% 100%',
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    
+    
+};
+
 
   return (
+    <div style={myStyle}>
+    <div class="flex justify-around mt-10  ">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-4xl  ">
+    <div className="quiz">
+       
     <div className="portal1">
       <div >
       <p>Timer: {seconds < 10 ? "0" + seconds : seconds}</p>
@@ -179,6 +196,10 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   </div>}
 
 
+    </div>
+    </div>
+    </div>
+    </div>
     </div>
     </div>
     </div>
