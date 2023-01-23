@@ -1,6 +1,7 @@
 .content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding-top: 20px;
   }
   
   .settings {
@@ -37,9 +38,9 @@
   .settings__select {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    width: 100%;
+    padding: 40px ;
+    width: 400%;
     flex: 0.8;
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
   

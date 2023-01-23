@@ -2,6 +2,7 @@ import { CircularProgress } from "@material-ui/core";
 //import React, {createContext, useContext} from 'react';
 import { useEffect, useState } from "react";
 import Question from "./Question.js/Question";
+import { useAuthContext } from "../hooks/useAuthContext";
 import "./Quiz2.css";
 
 //export const MyContext = React.createContext();
@@ -9,6 +10,7 @@ import "./Quiz2.css";
 
 const Quiz2 = ({score1, setScore1,questions, setQuestions }) => {
   const [options, setOptions] = useState();
+  const {user}=useAuthContext()
   const [currQues, setCurrQues] = useState(0);
   const [name,setName]=useState('Kunal');
   
@@ -39,7 +41,7 @@ const Quiz2 = ({score1, setScore1,questions, setQuestions }) => {
     <div className="quiz">
          <h2>h</h2>
         <h2>h</h2>
-      <span className="subtitle">Welcome, {name}</span>
+      <span className="subtitle">Welcome, {user.registeredUser}</span>
 
       {questions ? (
         <>

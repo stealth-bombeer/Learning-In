@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 // import "./random.css";
+import "./Home.css";
+// import "./random.css";
 
 const Home = () => {
   const navigate = useNavigate();
+ 
 
   const handleJoinRoom = () => {
     navigate("/joinroom");
@@ -30,8 +33,10 @@ const Home = () => {
   return (
     
     <div style={myStyle}>
+ 
+  
 
-<div class="parallax2">
+<div class="parallax2 pt-20">
       {/* <div class="heading-sm"> */}
       <div>
         <div class="stars-01"></div>
@@ -46,28 +51,36 @@ const Home = () => {
         <span>NG</span>
         <span>IN</span>
     </div>
-    <div class="heading-sm">
+    <div class="heading-sm ">
+    <div className="text-white text-shadow">
     Let's enjoy the journey of learning..
+    </div>
       </div>
+      <svg class="arrows">
+              <path class="a1" d="M0 0 L30 32 L60 0"></path>
+              <path class="a2" d="M0 20 L30 52 L60 20"></path>
+              <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
       {/* </div> */}
     </div>
       
       <div class="parallax1">
       <div className="home">
         {
-          <div class="pt-32 content-center grid grid-cols-3 gap-4 content-around items-centre">
+          <div class="pt-60 content-center grid grid-cols-3 gap-4  items-centre">
             <div className="card">
+             <div className="pl-2">
               <div className="card-content card-front">
                 <div class="flex justify-center">
-                  <div class="rounded-lg shadow-lg bg-emerald-300 max-w-sm shadow-lg hover:opacity-100">
+                  <div class="rounded-lg shadow-lg bg-yellow-300 max-w-sm shadow-lg hover:opacity-100">
                     <a href="#!">
                       <img
-                        class="rounded-t-lg object-fill h-60 w-96"
+                        class="rounded-t-lg object-fill h-80 w-96"
                         src="https://image.freepik.com/free-vector/quiz-background-with-items-in-flat-design_23-2147599082.jpg"
                         alt=""
                       />
                     </a>
-                    <div class="p-6 mt-4">
+                    <div class="p-6 mt-2">
                       <h5 class="text-gray-900 text-center text-xl font-medium mb-2 font-Abril Fatface font-black ">
                         JOIN YOUR ROOM
                       </h5>
@@ -113,6 +126,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            </div>
 
             <div className="card">
               <div className="card-content card-front">
@@ -120,7 +134,7 @@ const Home = () => {
                   <div class="rounded-lg  shadow-lg bg-yellow-300	  max-w-sm shadow-lg hover:opacity-100">
                     <a href="#!">
                       <img
-                        class="rounded-t-lg "
+                        class="rounded-t-lg object-fill h-80 w-96 "
                         src="https://tse4.mm.bing.net/th?id=OIP.oBf3-xQY_r75NZvLkw4rjgHaHa&pid=Api&P=0"
                         alt=""
                       />
@@ -172,13 +186,13 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="card">
+            <div className="card ">
               <div className="card-content card-front">
                 <div class="flex justify-center">
-                  <div class="rounded-lg shadow-lg bg-gradient-to-r from-emerald-300 via-cyan-700 to-emerald-300 max-w-sm hover:opacity-100">
+                  <div class="rounded-lg shadow-lg bg-yellow-300 max-w-sm hover:opacity-100">
                     <a href="#!">
                       <img
-                        class="rounded-t-lg"
+                        class="rounded-t-lg object-fill h-80 w-96"
                         src="https://dotwriter.com/blog/wp-content/uploads/2016/12/social-media-content-tips-dotwriter.png"
                         alt=""
                       />
@@ -230,8 +244,16 @@ const Home = () => {
             </div>
             <script src="random.js"></script>
           </div>
+          
+          
+         
         }
       </div>
+      <svg class="arrows">
+              <path class="a1" d="M0 0 L30 32 L60 0"></path>
+              <path class="a2" d="M0 20 L30 52 L60 20"></path>
+              <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
       </div>
       
       {/* <div class="parallax2"> */}
@@ -258,29 +280,35 @@ const Home = () => {
 
 
     <div class="parallax3">
+    <svg class="arrows">
+              <path class="a1" d="M0 0 L30 32 L60 0"></path>
+              <path class="a2" d="M0 20 L30 52 L60 20"></path>
+              <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
     </div>
-  <section>
-    
-  </section>
+  
 
     <div class="parallax4">
-      <div class="heading-sm">
-        Employment
-      </div>
+      
+      <svg class="arrows">
+              <path class="a1" d="M0 0 L30 32 L60 0"></path>
+              <path class="a2" d="M0 20 L30 52 L60 20"></path>
+              <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
     </div>
 
+    
     <section class="dark">
       
-    </section>
-
-    {/* <div class="parallax5">
-    </div> */}
+      </section>
+  
 
     
 
     <div class="parallax6">
+    
+    
     </div>
-
     </div>
   );
 };

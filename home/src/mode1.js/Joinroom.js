@@ -38,39 +38,60 @@ const Joinroom = () => {
         }
       });
   };
-
-  return (
-    <div className="create">
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere,
-        magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente
-        aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?
-      </h2>
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere,
-        magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente
-        aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?
-      </h2>
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio facere,
-        magnam sint porro qui quia dicta, ut neque perspiciatis dolore sapiente
-        aspernatur expedita placeat modi voluptatibus nam earum aliquid sequi?
-      </h2>
-
-      <form onSubmit={handleSubmit}>
-        <label>Enter the Room Code:</label>
-
-        <input
-          type="text"
-          required
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-        />
-        <button type="submit">Enter</button>
-      </form>
-    </div>
-  );
+  const myStyle = {
+    backgroundImage:
+        "url('https://newsroom.unsw.edu.au/sites/default/files/thumbnails/image/shutterstock_408729628_1.jpg')",
+    height: '120vh',
+    marginTop: '10px',
+    fontSize: '50px',
+    backgroundSize: 'cover',
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    
 };
 
+    return ( 
+      <div style={myStyle}>
+    <div className="create" >
+    <div className="pt-64">
+    <div classname="container mx-auto">
+    <form onSubmit={handleSubmit}>  
+     
+       <div className="content-center place-content-center">
+       <div class="  flex justify-center">
+                        <div class="rounded-lg  shadow-lg bg-white max-w-sm">
+                            
+                            <div class="p-6">
+                   
+        <div>
+       <div className="text-4xl text-black-500 hover:text-gray-500">
+       <label >Enter the Room Code:</label>
+       </div>
+      <input 
+        type="text" 
+        required 
+        value={code}
+        onChange={(e) => setCode(e.target.value)}
+      />
+      
+      
+      <button  type="submit" >Enter</button>
+      </div>
+      </div>
+    
+    </div>
+    </div>
+    </div>
+    
+    </form>
+    </div>
+                            
+                            </div>
+                      </div>
+                      
+    </div>
+     );
+}
+ 
 export default Joinroom;
 export {room};

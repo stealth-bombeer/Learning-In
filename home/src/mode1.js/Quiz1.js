@@ -152,11 +152,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
 
   return (
     <div className="portal1">
-      <h2>p</h2>
-      <h2>p</h2>
-      <h2>p</h2>
-      <h2>p</h2>
-     
+      <div >
       <p>Timer: {seconds < 10 ? "0" + seconds : seconds}</p>
        <p>Question no: {count}</p>
        <p>Score: {score}</p>
@@ -194,6 +190,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
 
 
       
+    </div>
     </div>
     </div>
     </div>

@@ -1,4 +1,4 @@
-import { Button, MenuItem, TextField } from "@material-ui/core";
+import { button, option, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Categories from "./Categories";
@@ -28,10 +28,7 @@ const Practice = ({fetchQuestions }) => {
     <div className="content">
       <div className="settings">
         <div className="settings__select">
-        <h2>hii</h2>
-        <h2>hii</h2>
-        <h2>hii</h2>
-          <select
+          <TextField
             select
             label="Select Category"
             value={category}
@@ -41,11 +38,13 @@ const Practice = ({fetchQuestions }) => {
           >
             {Categories.map((cat) => (
               <option key={cat.category} value={cat.value}>
+              <option key={cat.category} value={cat.value}>
                 {cat.category}
               </option>
+              </option>
             ))}
-          </select>
-          <select
+          </TextField>
+          <TextField
             select
             label="Select Difficulty"
             value={difficulty}
@@ -53,16 +52,19 @@ const Practice = ({fetchQuestions }) => {
             variant="outlined"
             style={{ marginBottom: 30 }}
           >
+            
             <option key="Easy" value="easy">
               Easy
             </option>
+           
             <option key="Medium" value="medium">
               Medium
             </option>
+           
             <option key="Hard" value="hard">
               Hard
             </option>
-          </select>
+          </TextField>
           <button
             variant="contained"
             color="primary"

@@ -54,7 +54,10 @@ const Result = ({score1, setScore1}) => {
     <div className="result">
       <span className="title">Final Score : {score1}</span>
       <button
-       
+        variant="contained"
+        color="secondary"
+        size="large"
+        style={{ alignSelf: "center", marginTop: 20 }}
         onClick={handleHome}
       >
         Go to homepage
