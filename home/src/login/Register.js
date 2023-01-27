@@ -77,11 +77,11 @@ const Register = () => {
       <label>Email</label>
     </div>
     <div class="user-box">
-    <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} />
+    <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} />
       <label>Password</label>
     </div>
     <div class="user-box">
-    <input type="text" name="confirmpassword" placeholder="Re-Enter Password" onChange={(e) => setConfirmPassword(e.target.value)} />
+    <input type="password" name="confirmpassword" placeholder="Re-Enter Password" onChange={(e) => setConfirmPassword(e.target.value)} />
       <label>Confirm Password</label>
     </div>
     <a href="#" onClick={handleSubmit}>

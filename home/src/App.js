@@ -12,7 +12,7 @@ import Aboutus from '../src/Navbar comp/Aboutus';
 import Createquiz from '../src/mode1.js/Createquiz';
 import RankList from'../src/mode1.js/RankList';
 import Settings from '../src/Navbar comp/Settings';
-import Viewprofile from '../src/Navbar comp/Viewprofile';
+//import Viewprofile from '../src/Navbar comp/Viewprofile';
 import Joinroom from '../src/mode1.js/Joinroom';
 import Practice from '../src/mode2.js/Practice';
 import Friends from './Friends';
@@ -23,6 +23,8 @@ import Quiz2 from './mode2.js/Quiz2';
 import Result from './mode2.js/Result/Result';
 import Profile from './Navbar comp/Profile';
 import {useAuthContext} from './hooks/useAuthContext';
+import NotFound from './NotFound';
+import FunFact from './mode3/FunFact';
 
 function App() {
 
@@ -52,6 +54,7 @@ const {user}=useAuthContext()
           <Route path='/register' element={!user ?<Register />:<Navigate to ='/home'/>} />
       
           <Route path="/home" element={user ?<Home />: <Navigate to="/"/>} />
+          
           <Route path="/error" element={user ?<Error/>:<Navigate to='/'/>} />
           <Route path="/createquiz" element={user ?<Createquiz 
           time={time}
@@ -72,12 +75,13 @@ const {user}=useAuthContext()
            count={count}
           setCount={setCount}/>:<Navigate to ='/'/>} />
           <Route path="/settings" element={user ?<Settings />:<Navigate to='/'/>} />
-          <Route path="/viewprofile" element={user ?<Viewprofile />:<Navigate to='/'/>} />
+          
           <Route path="/joinroom" element={user?<Joinroom />:<Navigate to='/'/>} />
           <Route exact path="/practice" element={user?<Practice 
               
               fetchQuestions={fetchQuestions}/>:<Navigate to='/'/>} />
           <Route path="/friends" element={user ?<Friends />:<Navigate to ='/'/>} />
+          <Route path="/funfact" element={<FunFact />} />
           
           <Route path="/codetimer" element={user ?<Codetimer time={time}
               setTime={setTime}
@@ -88,6 +92,7 @@ const {user}=useAuthContext()
               score1={score1}
               setScore1={setScore1}
               setQuestions={setQuestions}/>:<Navigate to ='/'/>} />
+            <Route path="/*" element={<NotFound />} />
         {/* </Route> */}
         </Routes>
       </div>

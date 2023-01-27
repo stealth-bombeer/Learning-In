@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
 import {useAuthContext} from '../hooks/useAuthContext'
 import "./Quiz1.css";
+import correctNotification from "../correct-answer.mp3"
+import wrongNotification from "../wrong-answer.mp3"
+import buttonSound from "../button-sound.mp3"
 let data, questionArray, timer,x;
 
 const handleSubmit = (e) => {
@@ -122,7 +125,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
     // e.preventDefault();
     if(option==questionArray[count-1].ans)
     {
-      
+      setTimeout(()=>{ document.getElementById('correct-sound').play()},100);
       console.log("Right answer");
       setScore(score+1);
       console.log(score);
@@ -130,7 +133,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
     }
     else 
     {
-      
+      setTimeout(()=>{ document.getElementById('wrong-sound').play()},100);
       console.log("Wrong answer")
       console.log(score);
       
@@ -152,6 +155,11 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
 
   return (
     <div className="portal1">
+      <Fragment>
+        <audio id="correct-sound" src={correctNotification}></audio>
+        <audio id="wrong-sound" src={wrongNotification}></audio>
+        <audio id="button-sound" src={buttonSound}></audio>
+      </Fragment>
       <div >
       <p>Timer: {seconds < 10 ? "0" + seconds : seconds}</p>
        <p>Question no: {count}</p>

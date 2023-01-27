@@ -6,12 +6,19 @@ import { useNavigate } from "react-router-dom";
 import {authUser,y} from '../../login/Login'
 import {authUserregisterd} from "../../login/Register";
 import "./Result.css";
+import sound from "../../crowd-cheer.mp3"
 
 const Result = ({score1, setScore1}) => {
   const navigate = useNavigate();
   const {user}=useAuthContext()
   const [error,setError]=useState()
   console.log('hii')
+  
+    useEffect(() => {
+      const audio = new Audio(sound);
+      audio.play();
+      
+    }, []);
   const handleHome = (e) => {
     e.preventDefault();
     console.log({score1})

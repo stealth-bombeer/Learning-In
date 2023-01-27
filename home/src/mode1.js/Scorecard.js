@@ -5,10 +5,17 @@ import {useNavigate} from'react-router-dom'
 import {room} from  './Joinroom'
 import {authUser,y} from '../login/Login'
 import {authUserregisterd} from "../login/Register";
+import sound from "../crowd-cheer.mp3"
+
 
 const Scorecard = ({score,count,setCount}) => {
   const navigate=useNavigate();
   const dataFetchedRef = useRef(false);
+  useEffect(() => {
+    const audio = new Audio(sound);
+    audio.play();
+    
+  }, []);
   const handleClick =(e) => {
     e.preventDefault();
     navigate('/home')

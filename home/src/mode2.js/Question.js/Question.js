@@ -1,7 +1,10 @@
 import { button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import "./Question.css";
+import correctNotification from "../../correct-answer.mp3"
+import wrongNotification from "../../wrong-answer.mp3"
+import buttonSound from "../../button-sound.mp3"
 
 const Question = ({
   currQues,
@@ -21,13 +24,20 @@ const Question = ({
 
   const handleSelect = (i) => {
     if (selected === i && selected === correct) return "select";
-    else if (selected === i && selected !== correct) return "wrong";
-    else if (i === correct) return "select";
+    else if (selected === i && selected !== correct) {
+      setTimeout(()=>{ document.getElementById('wrong-sound').play()},100);
+      
+      return "wrong";}
+    else if (i === correct){ 
+      //setTimeout(()=>{ document.getElementById('correct-sound').play()},500);
+      return "select";}
   };
 
   const handleCheck = (i) => {
     setSelected(i);
-    if (i === correct) setScore1(score1 + 1);
+    if (i === correct) {
+      setTimeout(()=>{ document.getElementById('correct-sound').play()},100);
+      setScore1(score1 + 1);}
     setError(false);
   };
 
@@ -37,6 +47,7 @@ const Question = ({
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected();
+      setTimeout(()=>{ document.getElementById('button-sound').play()},100);
     } else setError("Please select an option first");
   };
 
@@ -44,6 +55,11 @@ const Question = ({
 
   return (
     <div className="question">
+      <Fragment>
+        <audio id="correct-sound" src={correctNotification}></audio>
+        <audio id="wrong-sound" src={wrongNotification}></audio>
+        <audio id="button-sound" src={buttonSound}></audio>
+      </Fragment>
       <h1>Question {currQues + 1} :</h1>
 
       <div className="singleQuestion">
@@ -85,6 +101,8 @@ const Question = ({
           >
             {currQues > 20 ? "Submit" : "Next Question"}
           </button>
+          
+          
         </div>
       </div>
     </div>

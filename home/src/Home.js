@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
@@ -7,7 +8,7 @@ import "./Home.css";
 
 const Home = () => {
   const navigate = useNavigate();
- 
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleJoinRoom = () => {
     navigate("/joinroom");
@@ -16,7 +17,7 @@ const Home = () => {
     navigate("/practice");
   };
   const handleFriends = () => {
-    navigate("/viewprofile");
+    navigate("/funfact");
   };
 
   const myStyle = {
@@ -33,7 +34,18 @@ const Home = () => {
   return (
     
     <div style={myStyle}>
- 
+    {/* <div className={darkMode ? "dark-mode" : "light-mode"}>
+      <div className="container">
+        <span style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+        <div className="switch-checkbox">
+          <label className="switch">
+            <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
+            <span className="slider round"> </span>
+          </label>
+        </div>
+        <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
+      </div>
+    </div> */}
   
 
 <div class="parallax2 pt-20">
