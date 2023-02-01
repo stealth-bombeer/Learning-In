@@ -4,22 +4,29 @@ import axios from "axios";
 import React, { useState } from "react";
 import "./App.scss";
 import  Login  from "./login/Login"
+import Error from "./login/Error"
 import Register  from "./login/Register"
 import Home from './Home'
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Navigate,Routes, BrowserRouter as Router } from 'react-router-dom';
 import Aboutus from '../src/Navbar comp/Aboutus';
 import Createquiz from '../src/mode1.js/Createquiz';
-import Settings from '../src/Navbar comp/Settings';
-import Viewprofile from '../src/Navbar comp/Viewprofile';
+import RankList from'../src/mode1.js/RankList';
+//import Settings from '../src/Navbar comp/Settings';
+//import Viewprofile from '../src/Navbar comp/Viewprofile';
 import Joinroom from '../src/mode1.js/Joinroom';
 import Practice from '../src/mode2.js/Practice';
 import Friends from './Friends';
-import ProtectedRoutes from "./login/ProtectedRoutes";
 import Quiz1 from '../src/mode1.js/Quiz1'
 import Scorecard from '../src/mode1.js/Scorecard';
 import Codetimer from '../src/mode1.js/Codetimer';
 import Quiz2 from './mode2.js/Quiz2';
 import Result from './mode2.js/Result/Result';
+import Profile from './Navbar comp/Profile';
+import {useAuthContext} from './hooks/useAuthContext';
+import FunFact from './mode3/funfact';
+import NotFound from './NotFound';
+import Welcome from './Welcome';
+
 function App() {
 
   const [score, setScore] = useState(0);
@@ -27,7 +34,8 @@ function App() {
   const [code,setCode]=useState(1000);
   let [count, setCount] = useState(1);
   const [questions, setQuestions] = useState();
-
+  const [score1,setScore1]=useState(0);
+const {user}=useAuthContext()
   const fetchQuestions = async (category = "", difficulty = "") => {
     const { data } = await axios.get(
       `https://opentdb.com/api.php?amount=10${
@@ -40,45 +48,52 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      {user &&<Navbar />}
       <div className="content">
         <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/register' element={<Register />} />
-          {/* <Route element={<ProtectedRoutes />}> */}
-          <Route path="/home" element={<Home />} />
-          <Route path="/createquiz" element={<Createquiz 
+          <Route path='/'  element={!user ?<Login />:<Navigate to='/home'/>} />
+          <Route path='/register' element={!user ?<Register />:<Navigate to ='/home'/>} />
+      
+          <Route path="/home" element={user ?<Home />: <Navigate to="/"/>} />
+          <Route path="/error" element={user ?<Error/>:<Navigate to='/'/>} />
+          <Route path="/createquiz" element={user ?<Createquiz 
           time={time}
           setTime={setTime}
           code={code}
-          setCode={setCode}/>} />
-          <Route path="/quiz1" element={<Quiz1 score={score}
+          setCode={setCode}/>:<Navigate to  ="/"/>} />
+          <Route path="/quiz1" element={user ?<Quiz1 score={score}
               setScore={setScore}
               count={count}
               setCount={setCount}
-              />}
+              />:<Navigate to ='/'/>}
                />
-          <Route path="/aboutus" element={<Aboutus />} />
-          <Route path="/Scorecard" element={<Scorecard score={score}
-           count={count}
-           setCount={setCount}/>} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/viewprofile" element={<Viewprofile />} />
-          <Route path="/joinroom" element={<Joinroom />} />
-          <Route exact path="/practice" element={<Practice 
-              
-              fetchQuestions={fetchQuestions}/>} />
-          <Route path="/friends" element={<Friends />} />
+           <Route path="/ranklist" element={user ?<RankList />:<Navigate to='/'/>} />    
           
-          <Route path="/codetimer" element={<Codetimer time={time}
+          <Route path="/profile" element={user ? <Profile />:<Navigate to ='/'/>} />
+          <Route path="/aboutus" element={user ?<Aboutus />:<Navigate to ='/'/>} />
+          <Route path="/Scorecard" element={user ?<Scorecard score={score}
+           count={count}
+          setCount={setCount}/>:<Navigate to ='/'/>} />
+         
+         
+          <Route path="/joinroom" element={user?<Joinroom />:<Navigate to='/'/>} />
+          <Route exact path="/practice" element={user?<Practice 
+              
+              fetchQuestions={fetchQuestions}/>:<Navigate to='/'/>} />
+          <Route path="/friends" element={user ?<Friends />:<Navigate to ='/'/>} />
+          <Route path="/funfact" element={user ?<FunFact />:<Navigate to ='/'/>} />
+          <Route path="/codetimer" element={user ?<Codetimer time={time}
               setTime={setTime}
               code={code}
-              setCode={setCode} />} />
-          <Route exact path="/result" element={<Result score={score} />} />
-          <Route exact path="/quiz2" element={<Quiz2 questions={questions}
-              score={score}
-              setScore={setScore}
-              setQuestions={setQuestions}/>} />
+              setCode={setCode} />:<Navigate to ='/'/>} />
+          <Route exact path="/result" element={user ?<Result score1={score1} setScore1={setScore1} />:<Navigate to ='/'/>} />
+          <Route exact path="/quiz2" element={user ?<Quiz2 questions={questions}
+              score1={score1}
+              setScore1={setScore1}
+              setQuestions={setQuestions}/>:<Navigate to ='/'/>} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/*" element={<NotFound />} />
+          
         {/* </Route> */}
         </Routes>
       </div>

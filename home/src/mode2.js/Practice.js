@@ -33,35 +33,31 @@ const Practice = ({fetchQuestions }) => {
     
     
 };
-
   return (
-
-  
-  <div style={myStyle}>
-  <div class="flex justify-center mt-24 ">
-  <div class=" rounded-lg bg-white  px-36 shadow-lg">
-  <div class="font-serif italic hover:not-italic font-black text-yellow-400 flex mt-10 ml-32 text-4xl justify-items-center ">
-    PRACTICE A QUIZ
-  </div>
+    <div style={myStyle}>
+    <div class="flex justify-center mt-24 ">
+    <div class=" rounded-lg bg-zinc-50 px-36 shadow-2xl">
+    <div class="font-serif italic hover:not-italic font-black text-yellow-400 flex mt-10 ml-32 text-4xl justify-items-center ">
+      PRACTICE A QUIZ
+    </div>
     <div className="content">
       <div className="settings">
         <div className="settings__select">
-          <div className="grid grid-cols-2 gap-2 ">
+        <div className="grid grid-cols-2 gap-2 cursor-pointer">
           <div className="">
           <TextField
             select
             label="Select Category"
-           
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             variant="outlined"
-            style={{ marginBottom: 30,width:250
-               }}
-            
+            style={{ marginBottom: 30 ,width:250}}
           >
             {Categories.map((cat) => (
               <option key={cat.category} value={cat.value}>
+              <option key={cat.category} value={cat.value}>
                 {cat.category}
+              </option>
               </option>
             ))}
           </TextField>
@@ -73,34 +69,45 @@ const Practice = ({fetchQuestions }) => {
             value={difficulty}
             onChange={(e) => setDifficulty(e.target.value)}
             variant="outlined"
-            style={{ marginBottom: 30 ,width:250}}
+            style={{ marginBottom: 30,width:250 }}
           >
+            
             <option key="Easy" value="easy">
               Easy
             </option>
+           
             <option key="Medium" value="medium">
               Medium
             </option>
+           
             <option key="Hard" value="hard">
               Hard
             </option>
           </TextField>
           </div>
           </div>
+          <div className="flex justify-center">
+            <img src="https://webstockreview.net/images/clipart-child-fun-7.png" className="w-64"/>
+          </div>
           <div className="prac">
           <div className="mt-16 ">
-          <button onClick={handleSubmit} >
+          <button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={handleSubmit}
+          >
             Start Quiz
           </button>
-          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
           </div>
         </div>
       </div>
       </div>
-    </div>
-    </div>
-    </div>
-   
   );
 };
 

@@ -1,31 +1,79 @@
-import { button } from "@material-ui/core";
-import { useEffect } from "react";
+import { Button } from "@material-ui/core";
+import { useEffect,useState } from "react";
+import React, {createContext, useContext} from 'react';
+import { useAuthContext } from "../../hooks/useAuthContext";
 import { useNavigate } from "react-router-dom";
+import {authUser,y} from '../../login/Login'
+import {authUserregisterd} from "../../login/Register";
+import sound from "../../crowd-cheer.mp3"
 import "./Result.css";
 
-const Result = ({score }) => {
+const Result = ({score1, setScore1}) => {
   const navigate = useNavigate();
-
-  const myStyle = {
+  const {user}=useAuthContext()
+  const [error,setError]=useState()
+  console.log('hii')
+  useEffect(() => {
+    const audio = new Audio(sound);
+    audio.play();
     
-    height: '100vh',
-    backgroundcolor:'white',
-    backgroundSize: '100% 100%',
-    width: '100%',
-    backgroundRepeat: 'no-repeat',
-    
-    
-};
+  }, []);
 
-  // useEffect(() => {
-  //   if (!name) {
-  //     navigate("/home");
-  //   }
-  // }, [name, navigate ]);
+  const handleHome = (e) => {
+    e.preventDefault();
+    console.log({score1})
+    navigate('/home');
+    setScore1(0);
+  };
+  
+  // let user=authUser?authUser:authUserregisterd;
+  if(!user)
+  {
+        setError('You must be logged in')
+        return 
+  }
 
+  fetch('http://localhost:5000/result', {
+    method: 'POST',
+    crossDomain: true,
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "Access-Control-Allow-Origin": "*",
+      'Authorization':`Bearer ${user.accessToken}`
+    },
+    body: JSON.stringify({
+      score1:`${score1}`,
+      username:user.registeredUser
+    })
+  }
+  )
+    .then((res) => {
+       return res.json()
+    })
+    .then((data) => {
+      console.log(data, "Score updated")  
+
+    })
+ 
+    const myStyle = {
+    
+      backgroundImage:
+            "url('https://wallpapercave.com/wp/wp3222370.jpg')",
+        height: '100vh',
+        marginTop: '10px',
+        fontSize: '10px',
+        backgroundSize: '200% 200%',
+        width: '100%',
+        backgroundRepeat: 'no-repeat',
+        
+      
+      
+  };
+  
   return (
-    <div style={myStyle}>
-<body class="ress">
+   <div style={myStyle}>
+      
     
 <div className="result">
   <div className="mt-48">
@@ -36,8 +84,8 @@ const Result = ({score }) => {
     <div class="star">✭</div>
     
     <div class="rocket">
-      <div class="center">
-        <div class="body">
+      <div class="center1">
+        <div class="body1">
           <span>Z</span>
         </div>
         <div class="wing left"></div>
@@ -73,15 +121,16 @@ const Result = ({score }) => {
     <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://tse3.mm.bing.net/th?id=OIP.xdkQtGgRvyUF8js8-dtNIQHaHa&pid=Api&P=0" alt="" />
     <div class="p-6 flex flex-col justify-start">
       <h5 class="text-gray-900 text-xl font-medium mb-2">FINAL SCORE</h5>
-<p class="text-black-700 text-base text-xl mb-4">
-      <span className="title">{score}</span>
+<p class="text-black text-base text-xl mb-4">
+      <span className="title">{score1}</span>
       </p>
-      <button
+      <button class="bg-transparent hover:bg-blue-900 text-lg text-blue-900 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+  
         variant="contained"
         color="secondary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/home"
+        onClick={handleHome}
       >
         Go to homepage
       </button>
@@ -90,7 +139,6 @@ const Result = ({score }) => {
   </div>
 </div>
 </div>
-</body>
 </div>
   );
 };

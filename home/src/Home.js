@@ -2,9 +2,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 // import "./random.css";
+import "./Homes.css";
+// import "./random.css";
 
 const Home = () => {
   const navigate = useNavigate();
+ 
 
   const handleJoinRoom = () => {
     navigate("/joinroom");
@@ -13,23 +16,29 @@ const Home = () => {
     navigate("/practice");
   };
   const handleFriends = () => {
-    navigate("/friends");
+    navigate("/funfact");
+  }; 
+  const handleAboutUs= () => {
+    navigate("/aboutus");
   };
-
+  
   const myStyle = {
     // backgroundImage:
     //     "url('https://wallpapercave.com/wp/wp6638441.png')",
-    
+   
     height: "120vh",
     marginTop: "80px",
     //fontSize: "50px",
     backgroundSize: "cover",
     width: "100%",
     backgroundRepeat: "no-repeat",
+    
   };
   return (
-    
+
     <div style={myStyle}>
+ 
+  
 
 <div class="parallax2 pt-20">
       {/* <div class="heading-sm"> */}
@@ -188,13 +197,13 @@ const Home = () => {
                     <a href="#!">
                       <img
                         class="rounded-t-lg object-fill h-80 w-96"
-                        src="https://dotwriter.com/blog/wp-content/uploads/2016/12/social-media-content-tips-dotwriter.png"
+                        src="https://st3.depositphotos.com/3867481/16646/v/950/depositphotos_166465144-stock-illustration-vector-illustration-background-did-you.jpg"
                         alt=""
                       />
                     </a>
                     <div class="p-6">
                       <h5 class="text-gray-900 text-center text-xl font-medium  font-black mb-2">
-                        PLAY WITH YOUR FRIENDS
+                       DO YOU KNOW ?
                       </h5>
                       {/* <p class="text-gray-700 text-base font-Playfair Display font-bold italic mb-4">
                                 Invite your friends to play with them upto 4 players and know the master from your friends.
@@ -220,8 +229,7 @@ const Home = () => {
                     <div class="p-6">
                       {/* <h5 class="text-gray-900 text-xl font-medium  font-black mb-2">PLAY WITH YOUR FRIENDS</h5> */}
                       <p class="text-gray-700 text-base font-Playfair Display font-bold italic mb-4">
-                        Invite your friends to play with them upto 4 players and
-                        know the master from your friends.
+                       Read and upgrade your knowledge with shockingly amazing facts and top headlines 
                       </p>
                       <div className="flex justify-center pt-16">
                         <button
@@ -229,7 +237,7 @@ const Home = () => {
                           type="button"
                           class=" inline-block px-9 py-5 bg-cyan-700 text-white font-medium text-lg leading-tight uppercase rounded shadow-md hover:bg-cyan-400 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-700 active:shadow-lg transition duration-150 ease-in-out"
                         >
-                          Play with friends
+                          READ
                         </button>
                       </div>
                     </div>
@@ -283,28 +291,54 @@ const Home = () => {
     </div>
   
 
-    <div class="parallax4">
-      
-      <svg class="arrows">
-              <path class="a1" d="M0 0 L30 32 L60 0"></path>
-              <path class="a2" d="M0 20 L30 52 L60 20"></path>
-              <path class="a3" d="M0 40 L30 72 L60 40"></path>
-            </svg>
-    </div>
+    
 
     
-    <section class="dark">
-      
-      </section>
-  
+    
 
     
 
     <div class="parallax6">
-    
-    
+    <div>
+     <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+      <link
+         href="https://fonts.googleapis.com/css?family=Roboto"
+         rel="stylesheet"
+         />
+  <link rel="stylesheet" href="css/Homes.css" />
+  
+  <title>Hamburger Menu Overlay</title>
+  
+  <header className="showcase">
+    <div className="container showcase-inner">
+      <div className="text-6xl">
+      <h3 >OUR VISION</h3>
+      </div>
+      <div className="mt-4 text-xl">
+      <p>
+        "IF YOU HAVE FUN WHEN YOU PRACTICE,YOU MAY ALSO LEARN AND PERFORM BETTER"
+      </p>
+      </div>
+      <div>
+      <a  className="btn1">
+      <button
+                           onClick={handleAboutUs}
+                          type="button"
+                          
+                        >
+        Read More
+        </button>
+      </a>
+      </div>
+    </div>
+  </header>
+</div>
+
     </div>
     </div>
+    
   );
 };
 

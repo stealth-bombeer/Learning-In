@@ -1,4 +1,13 @@
 const mongoose = require('mongoose');
+
+const ScoreSchema=new mongoose.Schema({
+    username:{
+        type:String
+    },
+    score:{
+        type:Number
+    }
+})
 const QuestionSchema = new mongoose.Schema({
     
     title: {
@@ -35,6 +44,7 @@ const QuestionSetSchema=new mongoose.Schema({
         required:true,
     },
     questionArray:[QuestionSchema],
+    scoreArray:[ScoreSchema],
     room:
     {
         type:String,

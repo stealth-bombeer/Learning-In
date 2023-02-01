@@ -91,7 +91,7 @@
   width: 67px;
   height: 86px;
   animation: up 4s 1 cubic-bezier(0.755, 0.05, 0.855, 0.06); }
-  .rocket .center {
+  .rocket .center1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,7 +100,7 @@
     width: 100%;
     height: 100%;
     z-index: 1; }
-    .rocket .center:before {
+    .rocket .center1:before {
       content: '';
       display: block;
       position: absolute;
@@ -114,7 +114,7 @@
       border-radius: 0;
       background: #fff;
       margin: 0 auto; }
-    .rocket .center .body {
+    .rocket .center1 .body1 {
       position: absolute;
       top: 0;
       left: 0;
@@ -126,14 +126,14 @@
       border-radius: 100px 100px 0 0/200px 200px 0 0;
       background: #e7efff;
       margin: 0 auto; }
-      .rocket .center .body span {
+      .rocket .center1 .body1 span {
         display: block;
         padding-top: 10px;
         font-family: Arial;
         font-size: 12px;
         font-weight: bold;
         text-align: center; }
-      .rocket .center .body:before {
+      .rocket .center1 .body1:before {
         content: '';
         display: block;
         position: absolute;
@@ -147,7 +147,7 @@
         border-radius: 0;
         background: #2e7ba0;
         background-image: linear-gradient(90deg, #2e7ba0 0%, #2e7ba0 10%, #313163 11%, #313163 40%, #2e7ba0 41%, #2e7ba0 60%, #313163 61%, #313163 90%, #2e7ba0 91%, #2e7ba0 100%); }
-    .rocket .center .wing {
+    .rocket .center1 .wing {
       position: absolute;
       top: auto;
       left: auto;
@@ -158,10 +158,10 @@
       border: 5px solid #313163;
       border-radius: 100% 0% 0% 0%;
       background: #e7efff; }
-      .rocket .center .wing.left {
+      .rocket .center1 .wing.left {
         left: -4px;
         background-image: linear-gradient(90deg, #ff8460 0%, #ff8460 20%, #313163 21%, #313163 40%, #f6d99c 41%, #f6d99c 60%, #313163 61%, #313163 80%, #499bbf 81%, #499bbf 100%); }
-      .rocket .center .wing.right {
+      .rocket .center1 .wing.right {
         right: -4px;
         border-radius: 0% 100% 0% 0%;
         background-image: linear-gradient(-90deg, #ff8460 0%, #ff8460 20%, #313163 21%, #313163 40%, #f6d99c 41%, #f6d99c 60%, #313163 61%, #313163 80%, #499bbf 81%, #499bbf 100%); }

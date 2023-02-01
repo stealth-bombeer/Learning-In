@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useLocation,useNavigate } from "react-router-dom";
+import {useAuthContext} from '../hooks/useAuthContext'
 import "./Quiz1.css";
+import correctNotification from "../correct-answer.mp3"
+import wrongNotification from "../wrong-answer.mp3"
+import buttonSound from "../button-sound.mp3"
 let data, questionArray, timer,x;
 
 const handleSubmit = (e) => {
@@ -21,12 +25,18 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   const [room, setRoom] = useState(null);
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
- 
+ const [error,setError]=useState('')
   const [startTimer,setStartTimer]=useState(false);
   const [ans,setAns]= useState(' ');
-  
+  const {user}=useAuthContext()
   const navigate = useNavigate();
   useEffect(() => {
+
+    if(!user)
+    {
+      setError('You must be logged in ')
+      return 
+    }
     setRoom(location.state.room);
     if (room) {
       console.log(room);
@@ -37,7 +47,8 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
           "Content-Type": "application/json",
           Accept: "application/json",
           "Access-Control-Allow-Origin": "*",
-          room: room,
+          'Authorization':`Bearer ${user.accessToken}`,
+          room: room
         },
       })
         .then((res) => {
@@ -106,13 +117,15 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
   };
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(score);
+    console.log(room);
     navigate('/scorecard')
   };
   const handleSelect = (option) => {
     // e.preventDefault();
     if(option==questionArray[count-1].ans)
     {
-      
+      setTimeout(()=>{ document.getElementById('correct-sound').play()},100);
       console.log("Right answer");
       setScore(score+1);
       console.log(score);
@@ -120,7 +133,7 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
     }
     else 
     {
-      
+      setTimeout(()=>{ document.getElementById('wrong-sound').play()},100);
       console.log("Wrong answer")
       console.log(score);
       
@@ -139,10 +152,33 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
     setSeconds(0);
     
   };
+  const myStyle = {
+    backgroundImage:
+        "url('https://i.pinimg.com/originals/e1/62/c7/e162c7c175aa7e532dcce478b31609f8.jpg')",
+    height: '100vh',
+    backgroundcolor:'white',
+    backgroundSize: '100% 100%',
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    
+    
+};
+
 
   return (
+    <div style={myStyle}>
+    <div class="flex justify-around mt-10  ">
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-4xl  ">
+    <div className="quiz">
+       
     <div className="portal1">
+    <Fragment>
+        <audio id="correct-sound" src={correctNotification}></audio>
+        <audio id="wrong-sound" src={wrongNotification}></audio>
+        <audio id="button-sound" src={buttonSound}></audio>
+      </Fragment>
       <div >
+      
       <p>Timer: {seconds < 10 ? "0" + seconds : seconds}</p>
        <p>Question no: {count}</p>
        <p>Score: {score}</p>
@@ -172,13 +208,17 @@ const Quiz1 = ({score,setScore,count,setCount}) => {
         </button>
       </div>
       </div>
-      {x?<div className="start"><button onClick={handleClick}>Quit</button>
-      </div>:<div className="start"><button onClick={handleStart} type="submit">
+      {x?<div className="start"><button className="inline-block px-2 py-2.5  w-24 bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out" onClick={handleClick}>Quit</button>
+      </div>:<div className="start"><button className="inline-block px-2 py-2.5 w-24 bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out" onClick={handleStart} type="submit">
       Start
     </button>
   </div>}
 
-
+  </div>
+    </div>
+    </div>
+    </div>
+      
     </div>
     </div>
     </div>

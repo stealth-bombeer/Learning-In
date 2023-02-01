@@ -1,47 +1,54 @@
 import { useState } from "react";
-import {useNavigate} from'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import {useAuthContext} from '../hooks/useAuthContext'
+
 let room;
 const Joinroom = () => {
-  const navigate=useNavigate();
-    const [code, setCode] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        room =code ;
-        console.log(room)
-        fetch('http://localhost:5000/joinroom', {
-          method: 'POST',
-          crossDomain: true,
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify(
-           {room:room}
-          )
-        }
-        )
-          .then((res) => {
-           return res.json()
-          })
-          .then((data) => {
-            console.log(data, "Logged-In")
-            if(data==1)
-       { navigate('/quiz1',{state:{room}})}
-          })
-       
+  const navigate = useNavigate();
+  const [code, setCode] = useState("");
+  const [error,setError]=useState('')
+  const {user}=useAuthContext()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(!user)
+    {
+      setError('You must be looged in ')
+      return 
     }
-    const myStyle = {
-      backgroundImage:
-          "url('https://smartvco.com/wp-content/uploads/2018/10/webinars.png')",
-      height: '120vh',
-      marginTop: '60px',
-      fontSize: '50px',
-      backgroundSize: 'cover',
-      width: '100%',
-      backgroundRepeat: 'no-repeat',
-  
+    room = code;
+    console.log(room);
+    fetch("http://localhost:5000/joinroom", {
+      method: "POST",
+      crossDomain: true,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*",
+        'Authorization':`Bearer ${user.accessToken}`
+      },
+      body: JSON.stringify({ room: room }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data, "Logged-In");
+        if (data == 1) {
+          navigate("/quiz1", { state: { room } });
+        }
+      });
   };
+  const myStyle = {
+    backgroundImage:
+        "url('https://newsroom.unsw.edu.au/sites/default/files/thumbnails/image/shutterstock_408729628_1.jpg')",
+    height: '120vh',
+    marginTop: '10px',
+    fontSize: '50px',
+    backgroundSize: 'cover',
+    width: '100%',
+    backgroundRepeat: 'no-repeat',
+    
+};
 
     return ( 
       <div style={myStyle}>
@@ -87,3 +94,4 @@ const Joinroom = () => {
 }
  
 export default Joinroom;
+export {room};

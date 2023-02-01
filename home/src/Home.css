@@ -1,5 +1,6 @@
 .home{
     color:rgb(14, 1, 1)
+    
   }
   .card-content {
       
@@ -24,13 +25,88 @@
     }
   
     @import url('https://fonts.googleapis.com/css?family=Ubuntu');
-  body, html {
+   body, html {
     height: 100%;
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
     line-height: 180%;
     color: #666;
     text-align: center;
+    background-image: linear-gradient(to bottom,#0e7490,#092b36);
+    background-repeat: no-repeat;
+    background-size: 100% 200%;
+   }
+  nav{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 60px;
+    box-sizing: border-box;
+    transition: .5s;
+    z-index: 5;
+    opacity: 1;
+  }
+  nav.black{
+    background: rgba(0,0,0,.8);
+    height: 80px;
+    padding: 10px 50px;
+  }
+  nav .logo{
+    float: left;
+  }
+  nav .logo img{
+    height: 80px;
+    transition: .5s;
+  }
+  nav.black .logo img{
+    height: 60px;
+  }
+  nav ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav ul li{
+    list-style: none;
+    margin-top: 25px;
+    line-height: none;
+    font-size: 18px;
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1s;
+    text-shadow: 0 0 10px #000;
+  }
+  /* nav ul li a{
+    line-height: none;
+    font-size: 18px;
+    color: white;
+    padding: 5px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 1s;
+    text-shadow: 0 0 10px #000;
+  } */
+  
+  /* nav.black ul li a{
+    color: #fff;
+    line-height: 20px;
+  } */
+  nav.black ul li{
+    color: #fff;
+    line-height: 20px;
+  }
+  /* nav ul li a.active,
+  nav ul li a:hover{
+    color: orange;
+  } */
+  nav ul li.active,
+  nav ul li:hover{
+    color: orange;
   }
   
   .parallax1 {
@@ -42,21 +118,21 @@
     min-height: 100%;
   }
   .parallax3 {
-    background: url("https://dpi.wi.gov/sites/default/files/imce/online-blended-learning/_images/kids_computer.jpg");
-    min-height: 60%;
+    background: url("https://edsurge.imgix.net/uploads/post/image/10700/learning-1516906162.jpg?auto=compress%2Cformat&w=3000&h=1215&fit=crop");
+    min-height: 80%;
   }
   .parallax4 {
-    background: url("http://www.qs.com/wp-content/uploads/2015/07/student-subject-choices-stem-drift-bobbed.jpg");
+    background: url("http://thumbs.dreamstime.com/z/modern-flat-education-icons-hexagons-set-educational-different-subjects-concepts-multicolored-long-shadows-36766385.jpg");
     min-height: 70%;
   }
   .parallax5 {
     background: url("http://www.babysitting.academy/wp-content/uploads/2015/01/kids-hands-holding-plants-yolo-farm-to-fork-1030x686.jpg");
     min-height: 100%;
   }
-  .parallax6 {
+  /* .parallax6 {
     background: url("https://quotefancy.com/media/wallpaper/3840x2160/2016858-Confucius-Quote-Knowledge-without-practice-is-useless-Practice.jpg");
     min-height: 100%;
-  }
+  } */
   .parallax1, .parallax2, .parallax3, .parallax4, .parallax5, .parallax6 {
     position: relative;
     opacity: 1;
@@ -160,11 +236,7 @@
     background-color: #45a049;
   }
   
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+ 
   
   .dark{
     overflow: auto;
@@ -455,4 +527,4 @@
       left: 15px;
       bottom: 15px
   } */
-  
+ 

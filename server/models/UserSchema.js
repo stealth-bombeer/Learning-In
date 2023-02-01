@@ -1,4 +1,11 @@
 const mongoose = require('mongoose');
+
+const ScorearrSchema=new mongoose.Schema({
+    indiv_score:{
+        type:Number
+    }
+})
+
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -8,13 +15,17 @@ const UserSchema = new mongoose.Schema({
     email:
     {
         type: String,
-        unique: true,
+        // unique: true,
         required: true
     },
     password: {
         type: String,
         required: true
-    }
+    },
+    totalscore: {
+        type: Number,
+    },
+    score_arr:[ScorearrSchema]
 })
 
 //collection:-Register

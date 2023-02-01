@@ -2,47 +2,23 @@ import React from "react";
 import loginImg from "./login.svg";
 import { Link,useNavigate} from 'react-router-dom';
 import "./style.css";
+import "./style.css";
 import { Component } from "react";
 import { useState } from "react";
-
+import { useSignup } from "../hooks/useSignup";
+let authUserregisterd = "";
 const Register = () => {
-let navigate=useNavigate();
+  let navigate = useNavigate();
   const [username, setUsername] = useState(" ");
   const [email, setEmail] = useState(" ");
   const [password, setPassword] = useState(" ");
   const [confirmpassword, setConfirmPassword] = useState(" ");
-  const [registered,setRegistered]=useState(false);
+  const { signup, error, isLoading } = useSignup();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = { username, email, password, confirmpassword };
-    console.log(user)
-    fetch('http://localhost:5000/register', {
-      method: 'POST',
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        username: user.username,
-        email: user.email,
-        password: user.password,
-        confirmpassword: user.confirmpassword
-      })
-    }
-    )
-      .then((res) => {
-         return res.json()
-      })
-      .then((data) => {
-        setRegistered(true)
-        console.log(data, "userregisterd")  
-          if(data==1)
-        { navigate('/home');}
-      })
-  }
+    await signup(username, email, password, confirmpassword);
+  };
 
   return (
 
@@ -89,9 +65,12 @@ let navigate=useNavigate();
 
     // </div>
     
-    <div class="login-box">
-  <h2>Register</h2>
+<div class="login-box">
+  
   <form>
+  <div className="text-white text-2xl mb-4">
+      <h6>SIGNUP</h6>
+      </div>
     <div class="user-box">
     <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} />
       <label>Username</label>
@@ -121,5 +100,6 @@ let navigate=useNavigate();
   </form>
 </div>
   );
-}
+};
 export default Register;
+export { authUserregisterd };
