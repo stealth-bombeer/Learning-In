@@ -1,0 +1,25 @@
+/* .RankList {
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+     */
+  table {
+    border: 6px solid rgb(29, 153, 219);
+    width: 800px;
+    height: 200px;
+  }
+    
+  th {
+    border-bottom: 4px solid rgb(19, 126, 208);
+  }
+  tr:nth-child(even){background-color: #f2f2f2;}
+    
+  td {
+    text-align: center;
+  }
+  .fonts{
+    font-family: 'Aboreto',aboreto;
+}
+
