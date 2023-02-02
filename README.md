@@ -18,21 +18,47 @@
     alt="adam-pw" /> 
 </div>
 
+## 📝 Description
+
 <div align="center">
 <table>
   <tr>
     <td>
-<strong>Learning-In</strong>:- is an interactive  
+<strong>Learning-In</strong>:- <br>
+      An online platform where users can practice ,judge and upgrade their knowledge leading to mastering subjects.We have created a quiz room system configuration with security of the room code.We also have login n sign up High security to create/enter the user portal    
 <br><br>
       The <i>key features</i>:
-      <ul>
-<li> to simplify the complex process of application to hostel and automate the allotment process
-<li> A single platform for all hostel students and authorities
-      </ul>
+- Mode 1
+      
+- Mode 2
+      
+- Mode 3
+      
+
     </td>
   </tr>
   </table>
   </div>
+  
+  <details>
+  
+<summary>
+  Table of Contents
+  </summary>
+  
+- [Description](#description)
+- [Links](#links)
+- [Tech Stack](#tech-stack)
+- [Progress](#progress)
+- [Future Scope](#future-scope)
+- [Applications](#applications)
+- [Project Setup](#project-setup)
+- [Usage](#usage)
+- [Team Members](#team-members)
+- [Mentors](#mentors)
+- [Screenshots](#screenshots)
+  
+</details>
   
   ## 🛠️ Project Setup
 
