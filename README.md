@@ -53,7 +53,7 @@
       🚀Mode 1 is a very shrewd way to test a individual's potential by giving tests/quizzes and embarking one's potential <br>
      The <i>key features</i>:
       <ul>
-        <li> Users can create quizzes with a auto-generated room code and can share and hsot the quiz.
+        <li> Users can create quizzes with a auto-generated room code and can share and host the quiz.
           <li> Users can enter the room and attempt the quiz with a timer on each question.
             <li> Users gets a scorecard after submission and a Rank list to judge and upskill their performance amongst their peers
       </ul>
