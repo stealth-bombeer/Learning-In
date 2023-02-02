@@ -43,7 +43,7 @@ const Aboutus = () => {
                 <p>kunal@example.com</p>
                 </div>
                 <p>
-                  <button className="button mb-8">Contact</button>
+                  <button type ="submit" className="button mb-8">Contact</button>
                 </p>
               </div>
             </div>
