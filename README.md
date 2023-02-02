@@ -3,7 +3,8 @@
 <h1 align="center">
   <a href="https://github.com/CommunityOfCoders/Inheritance-2022">
     <img src="https://res.cloudinary.com/dn6vz8exv/image/upload/v1665664791/inh_zzefoy.jpg" alt="CoC Inheritance 2022" width="500" height="166">
-  </a>
+   </a>
+   
   <br>
   CoC Inheritance 2022
 </h1>
@@ -55,7 +56,8 @@
         <li> Users can create quizzes with a auto-generated room code and can share and hsot the quiz.
           <li> Users can enter the room and attempt the quiz with a timer on each question.
             <li> Users gets a scorecard after submission and a Rank list to judge and upskill their performance amongst their peers
-      </ul><hr>
+      </ul>
+      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
              
 - Mode 2:-<br>
             🎯Mode 2 is an assorted way for practicing and improvising one's weak points on individual or multifaceted topics<br>
@@ -64,14 +66,16 @@
           <li> Users can choose from varied range of topics and can reach milestones with daily practice .
             <li> Users can choose the topics based on the difficulty level:easy,intermediate,hard  
               <li> Users receive scorecard and thus can work pushing one's limit.
-      </ul><hr>
+      </ul>
+      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
       
 - Mode 3:-<br>
            🎭Mode 3 is a very interactive and refreshing way to keep up with current news<br>
       <ul>
           <li> Users can learn amazing fun facts for general knowledge 
             <li> Users can scroll global news headlines and keep themselves updated          
-      </ul><hr>
+      </ul>
+      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
     <div align="center">
       A Profile-feature which allows users to track their learning progress and a real-time progress graph 🏆
       </div>
