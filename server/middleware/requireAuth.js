@@ -4,9 +4,9 @@ const User = require("../models/UserSchema");
 const requireAuth = async (req, res, next) => {
   // verify user is authenticated
   const { authorization } = req.headers;
-    
+
   if (!authorization) {
-    console.log('insside auth')
+    console.log("insside auth");
     return res.status(401).json({ error: "Authorization token required" });
   }
   console.log(authorization);

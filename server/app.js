@@ -5,7 +5,7 @@ const validator = require("validator");
 const cors = require("cors");
 const http = require("http");
 const cookieParser = require("cookie-parser");
-const requireAuth=require('./middleware/requireAuth')
+const requireAuth = require("./middleware/requireAuth");
 const { createTokens } = require("./JWT");
 const mongoose = require("mongoose");
 require("./models/UserSchema");
@@ -74,7 +74,7 @@ app.post("/register", async (req, res) => {
     // })
     console.log(accessToken);
     console.log("inside");
-    return res.status(200).json({ registeredUser:username,accessToken });
+    return res.status(200).json({ registeredUser: username, accessToken });
   } catch (error) {
     console.log(error.message);
     return res.status(400).json({ error: error.message });
@@ -88,28 +88,21 @@ app.post("/", async (req, res) => {
   const user = await User.findOne({ username });
   if (!username || !password) {
     return res.status(400).json("All fields must be filled");
-  } 
-  else if (!user) 
-  {
+  } else if (!user) {
     return res.status(400).json("You're not registered with us :) ");
-  } 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) 
-    {
-      return res.status(400).json("Credentials Incorrect");
-    } 
-    try{
-      const accessToken = createTokens(user);
-      return res.status(200).json({ registeredUser: user.username, accessToken });
-    }
-    catch (error)
-    {
+  }
+  const match = await bcrypt.compare(password, user.password);
+  if (!match) {
+    return res.status(400).json("Credentials Incorrect");
+  }
+  try {
+    const accessToken = createTokens(user);
+    return res.status(200).json({ registeredUser: user.username, accessToken });
+  } catch (error) {
     console.log(error.message);
     return res.status(400).json({ error: error.message });
-    }
-    }
-  
-);
+  }
+});
 
 // app.post("/", async (req, res) => {
 //   const { username, password } = req.body;
@@ -248,7 +241,7 @@ app.post("/", async (req, res) => {
 //   }
 // });
 
-app.use(requireAuth)
+app.use(requireAuth);
 
 app.post("/createquiz", async (req, res) => {
   const { adminName, questionArray, room, timer } = req.body;
@@ -298,12 +291,15 @@ app.post("/scorecard", async (req, res) => {
 });
 
 app.post("/result", async (req, res) => {
-  console.log(req.method)
-  const { score1, username} = req.body;
+  console.log(req.method);
+  const { score1, username } = req.body;
   console.log(req.body);
-  const questionSet =await User.updateOne(
+  const questionSet = await User.updateOne(
     { username: username },
-    { $push: { score_arr: { indiv_score: score1 } },$inc: { totalscore: score1 }  }
+    {
+      $push: { score_arr: { indiv_score: score1 } },
+      $inc: { totalscore: score1 },
+    }
   );
   if (questionSet) {
     console.log("Room found ");
@@ -311,7 +307,6 @@ app.post("/result", async (req, res) => {
     console.log("Room not found ");
   }
 });
-
 
 app.get("/quiz1", async (req, res) => {
   console.log(req.headers.room);
@@ -337,12 +332,10 @@ app.get("/profile", async (req, res) => {
   return res.json({ info });
 });
 
-
-
 app.get("/ranklist", async (req, res) => {
   console.log(req.headers.room);
   const { room } = req.headers;
-  const rank = await Question.findOne({ room })
+  const rank = await Question.findOne({ room });
   console.log(rank);
   return res.json({ rank });
 });
