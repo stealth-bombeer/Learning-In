@@ -17,6 +17,7 @@
   <a href="https://github.com/stealth-bombeer/Learning-In/issues"><img alt="GitHub contributors" src="https://img.shields.io/github/issues/stealth-bombeer/Learning-In"></a>
     <img src="https://komarev.com/ghpvc/?username=Learning-In&label=Project%20views&color=0e75b6&style=flat"
     alt="adam-pw" /> 
+    <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 </div>
 
 <details>
@@ -56,6 +57,9 @@
             <li> Users gets a scorecard after submission and a Rank list to judge and upskill their performance amongst their peers
       </ul>
       ![WhatsApp Image 2023-02-02 at 7 38 45 PM](https://user-images.githubusercontent.com/96366867/216354473-5812347e-f869-47dd-94b2-9223c55735a4.jpeg)
+      <br>
+      <br>
+      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
              
 - Mode 2:-<br>
@@ -67,6 +71,9 @@
               <li> Users receive scorecard and thus can work pushing one's limit.
       </ul>
       ![WhatsApp Image 2023-02-02 at 7 39 37 PM](https://user-images.githubusercontent.com/96366867/216354716-8361e9e1-7e39-4f0f-84b0-b9f9f2dafd7d.jpeg)
+      <br>
+      <br>
+       <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
       
       
@@ -77,13 +84,13 @@
             <li> Users can scroll global news headlines and keep themselves updated          
       </ul>
       ![WhatsApp Image 2023-02-02 at 7 39 03 PM](https://user-images.githubusercontent.com/96366867/216354941-4864f462-e84b-44d6-9c12-2e565e08cbdc.jpeg)
+      <br>
+      <br>
+      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 <div>
   
   </div>
-      
-  
-     
     </td>
   </tr>
   </table>
@@ -92,16 +99,18 @@
  ## 🌟Novelty Features 
   <div align="center">
   <table>
-  <tr>
-  <td>
-  <ul>
-  <li> A Profile-feature which allows users to track their learning progress using a progress-bar indicating their current level 📈
-  <li> Real-time progress graph which allows users to monitor their previous performances 📊
-  <li> Sound-Effects which makes the user experience more engaging 🎵
+   <tr>
+    <td>
+      <ul>
+        <li> A Profile-feature which allows users to track their learning progress using a progress-bar indicating their current level 📈
+        <li> Real-time progress graph which allows users to monitor their previous performances 📊
+        <li> Sound-Effects which makes the user experience more engaging 🎵
+      </ul>  
   </td>
   </tr>
   </table>
     </div>
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">    
   
  ## 🔗Links
 
@@ -109,7 +118,7 @@
 - [Drive Link to Screenshots of your project](https://drive.google.com/folderview?id=1UQhwGt7wJ9Zcc5BxzoybNOhZbDISaPpO)
 - [Hosted Website Link](https://learning-68mnm46m1-stealth-bombeer.vercel.app/)
 - [Hosted Backend Link](https://learning-in-production.up.railway.app/)
-
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
   
 ## 🛠Project Setup
 
@@ -131,7 +140,7 @@ cd server
 npm install
 npm start
 ```
-
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 ## 🤖Tech-Stack
 
@@ -144,22 +153,40 @@ Frontend:-
 Backend:-
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 ## 🦅Future Scope
 - [ ] Create a live quiz room which a group of users can create and join and get live ranklists after each question.
 - [ ] A proctoring system for mode-1 can be implemented to avoid unfair means during quizzes.
 - [ ] Give more in depth analysis of the quiz given and display performance of each topic so that users can know which topic to work on.
 - [ ] Dark-Mode for the website.
-
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 
 ## 👩‍💻Team members
 
 - **Kunal Goudani** 😈 - goudanikuanl3@gmail.com
 - **Dhruvisha Anghan** 🐬 - dhruvishaanghan2114@gmail.com
-- **Dev Bhuva** 😇- dbbhuva@gmail.com
+- **Dev Bhuva** 😇 - dbbhuva@gmail.com
+- **Dhruvin Patel** 😴 - dhruvin3@gmail.com
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 ## 👨‍🏫Mentors
 
 - **Harsh Nag** 🤖 - harshnag23@gmail.com
 - **Smit Sekhadia** 👾 - smitsekhadia99@gmail.com
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+
+## 📸Screenshots
+
+![WhatsApp Image 2023-02-02 at 7 01 31 PM (3)](https://user-images.githubusercontent.com/96366867/216358520-2fa31486-3d49-493f-a565-5f0c50159aa8.jpeg)
+<br>
+<br>
+<img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+<br>
+<br>
+![WhatsApp Image 2023-02-02 at 7 39 11 PM](https://user-images.githubusercontent.com/96366867/216357797-14f8c9c0-f7a9-4c27-845c-b65521371a57.jpeg)
+
+
+
+
