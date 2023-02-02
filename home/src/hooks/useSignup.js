@@ -13,7 +13,15 @@ export const useSignup = () => {
       "https://learning-in-production.up.railway.app/register",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Headers":
+            "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+          "Access-Control-Allow-Methods": "OPTIONS,POST",
+          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Origin": "*",
+          "X-Requested-With": "*",
+        },
         body: JSON.stringify({ username, email, password, confirmpassword }),
       }
     );

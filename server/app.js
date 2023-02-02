@@ -11,8 +11,16 @@ const mongoose = require("mongoose");
 require("./models/UserSchema");
 require("./models/QuestionSchema");
 app.use(express.json());
-app.use(cors());
 app.use(cookieParser());
+
+const corsOpts = {
+  origin: "*",
+
+  methods: ["GET", "POST"],
+
+  allowedHeaders: ["Content-Type"],
+};
+app.use(cors(corsOpts));
 
 const mongoUrl =
   "mongodb+srv://Kunal123:Kunal123@cluster0.qtx9wb3.mongodb.net/?retryWrites=true&w=majority";
