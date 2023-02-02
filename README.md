@@ -55,7 +55,8 @@
           <li> Users can enter the room and attempt the quiz with a timer on each question.
             <li> Users gets a scorecard after submission and a Rank list to judge and upskill their performance amongst their peers
       </ul>
-      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+      ![WhatsApp Image 2023-02-02 at 7 38 45 PM](https://user-images.githubusercontent.com/96366867/216354473-5812347e-f869-47dd-94b2-9223c55735a4.jpeg)
+
              
 - Mode 2:-<br>
             🎯Mode 2 is an assorted way for practicing and improvising one's weak points on individual or multifaceted topics<br>
@@ -65,7 +66,7 @@
             <li> Users can choose the topics based on the difficulty level:easy,intermediate,hard  
               <li> Users receive scorecard and thus can work pushing one's limit.
       </ul>
-      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+      
       
 - Mode 3:-<br>
            🎭Mode 3 is a very interactive and refreshing way to keep up with current news<br>
@@ -73,7 +74,13 @@
           <li> Users can learn amazing fun facts for general knowledge 
             <li> Users can scroll global news headlines and keep themselves updated          
       </ul>
-      <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
+      
+<div>
+  
+  </div>
+      
+  
+     
     </td>
   </tr>
   </table>
