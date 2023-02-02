@@ -66,6 +66,8 @@
             <li> Users can choose the topics based on the difficulty level:easy,intermediate,hard  
               <li> Users receive scorecard and thus can work pushing one's limit.
       </ul>
+      ![WhatsApp Image 2023-02-02 at 7 39 37 PM](https://user-images.githubusercontent.com/96366867/216354716-8361e9e1-7e39-4f0f-84b0-b9f9f2dafd7d.jpeg)
+
       
       
 - Mode 3:-<br>
