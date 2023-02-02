@@ -86,12 +86,10 @@
   
  ## 🔗Links
 
-- [GitHub Repository]()
-- [Demo Video]()
-- [Drive Link to Screenshots of your project]()
-- [Hosted Website Link]()
-- [App APK Link]()
-- [Hosted Backend Link]()
+- [GitHub Repository](https://github.com/stealth-bombeer/Learning-In)
+- [Drive Link to Screenshots of your project](https://drive.google.com/folderview?id=1UQhwGt7wJ9Zcc5BxzoybNOhZbDISaPpO)
+- [Hosted Website Link](https://learning-68mnm46m1-stealth-bombeer.vercel.app/)
+- [Hosted Backend Link](https://learning-in-production.up.railway.app/)
 
   
 ## 🛠Project Setup
