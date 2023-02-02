@@ -1,9 +1,9 @@
 import { button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { Fragment, useState } from "react";
-import correctNotification from "../../correct-answer.mp3"
-import wrongNotification from "../../wrong-answer.mp3"
-import buttonSound from "../../button-sound.mp3"
+import correctNotification from "../../correct-answer.mp3";
+import wrongNotification from "../../wrong-answer.mp3";
+import buttonSound from "../../button-sound.mp3";
 import "./Question.css";
 
 const Question = ({
@@ -25,19 +25,25 @@ const Question = ({
   const handleSelect = (i) => {
     if (selected === i && selected === correct) return "select";
     else if (selected === i && selected !== correct) {
-      setTimeout(()=>{ document.getElementById('wrong-sound').play()},100);
-      
-      return "wrong";}
-    else if (i === correct){ 
+      setTimeout(() => {
+        document.getElementById("wrong-sound").play();
+      }, 100);
+
+      return "wrong";
+    } else if (i === correct) {
       //setTimeout(()=>{ document.getElementById('correct-sound').play()},500);
-      return "select";}
+      return "select";
+    }
   };
 
   const handleCheck = (i) => {
     setSelected(i);
     if (i === correct) {
-      setTimeout(()=>{ document.getElementById('correct-sound').play()},100);
-      setScore1(score1 + 1);}
+      setTimeout(() => {
+        document.getElementById("correct-sound").play();
+      }, 100);
+      setScore1(score1 + 1);
+    }
     setError(false);
   };
 
@@ -47,7 +53,9 @@ const Question = ({
     } else if (selected) {
       setCurrQues(currQues + 1);
       setSelected();
-      setTimeout(()=>{ document.getElementById('button-sound').play()},100);
+      setTimeout(() => {
+        document.getElementById("button-sound").play();
+      }, 100);
     } else setError("Please select an option first");
   };
 
@@ -78,7 +86,8 @@ const Question = ({
             ))}
         </div>
         <div className="controls">
-        <button className="inline-block px-2 py-2.5  bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
+          <button
+            className="inline-block px-2 py-2.5  bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
             variant="contained"
             color="secondary"
             size="large"
@@ -92,7 +101,8 @@ const Question = ({
           >
             Quit
           </button>
-          <button className="inline-block px-2 ml-4 py-2.5 bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
+          <button
+            className="inline-block px-2 ml-4 py-2.5 bg-cyan-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-cyan-500 hover:shadow-lg focus:bg-cyan-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-cyan-800 active:shadow-lg transition duration-150 ease-in-out"
             variant="contained"
             color="primary"
             size="large"

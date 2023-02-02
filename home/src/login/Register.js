@@ -1,6 +1,6 @@
 import React from "react";
 import loginImg from "./login.svg";
-import { Link,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import "./style.css";
 import { Component } from "react";
@@ -21,7 +21,6 @@ const Register = () => {
   };
 
   return (
-
     // <div className="base-container">
 
     //   <div className="header">Register</div>
@@ -64,41 +63,57 @@ const Register = () => {
     //   </div>
 
     // </div>
-    
-<div class="login-box">
-  
-  <form>
-  <div className="text-white text-2xl mb-4">
-      <h6>SIGNUP</h6>
-      </div>
-    <div class="user-box">
-    <input type="text" name="username" onChange={(e) => setUsername(e.target.value)} />
-      <label>Username</label>
+
+    <div class="login-box">
+      <form>
+        <div className="text-white text-2xl mb-4">
+          <h6>SIGNUP</h6>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label>Username</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label>Password</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            name="confirmpassword"
+            placeholder="Re-Enter Password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <label>Confirm Password</label>
+        </div>
+        <a href="#" onClick={handleSubmit}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit
+        </a>
+        <div class="underline hover:underline-offset-4">
+          <Link to="/">Already have an account?</Link>
+        </div>
+      </form>
     </div>
-    <div class="user-box">
-    <input type="text" name="email" onChange={(e) => setEmail(e.target.value)} />
-      <label>Email</label>
-    </div>
-    <div class="user-box">
-    <input type="text" name="password" onChange={(e) => setPassword(e.target.value)} />
-      <label>Password</label>
-    </div>
-    <div class="user-box">
-    <input type="text" name="confirmpassword" placeholder="Re-Enter Password" onChange={(e) => setConfirmPassword(e.target.value)} />
-      <label>Confirm Password</label>
-    </div>
-    <a href="#" onClick={handleSubmit}>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
-    <div class="underline hover:underline-offset-4">
-            <Link to="/">Already have an account?</Link>
-             </div>
-  </form>
-</div>
   );
 };
 export default Register;

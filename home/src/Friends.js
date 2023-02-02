@@ -1,5 +1,5 @@
 const Friends = () => {
-    return ( console.log('') );
-}
- 
+  return console.log("");
+};
+
 export default Friends;
