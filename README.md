@@ -26,7 +26,7 @@
 - [Description](#description)
 - [Links](#links)
 - [Tech Stack](#tech-stack)
-- [Novelty Features](#novelty features)
+- [Novelty Features](#novelty-features)
 - [Future Scope](#future-scope)
 - [Project Setup](#project-setup)
 - [Team Members](#team-members)
