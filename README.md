@@ -76,7 +76,8 @@
           <li> Users can learn amazing fun facts for general knowledge 
             <li> Users can scroll global news headlines and keep themselves updated          
       </ul>
-      
+      ![WhatsApp Image 2023-02-02 at 7 39 03 PM](https://user-images.githubusercontent.com/96366867/216354941-4864f462-e84b-44d6-9c12-2e565e08cbdc.jpeg)
+
 <div>
   
   </div>
