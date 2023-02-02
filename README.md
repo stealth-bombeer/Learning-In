@@ -131,7 +131,7 @@ Backend:-
 ## 🦅Future Scope
 - [ ] The User Interface can be made more user friendly though we have tried to create an execellent UI as per our knowledge.
 - [ ] Dark mode can be implemented using low-light filters.
-- [ ] A proctoring system for mode-1 cam be implemented to avoid unfair means during quizzes.
+- [ ] A proctoring system for mode-1 can be implemented to avoid unfair means during quizzes.
 
 
 ## 👩‍💻Team members
