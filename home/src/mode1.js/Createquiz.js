@@ -100,7 +100,7 @@ const Createquiz = ({ time, setTime, code, setCode }) => {
     console.log(quest.length);
     const userii = quest;
     console.log(userii);
-    fetch("http://localhost:5000/createquiz", {
+    fetch("https://learning-in-production.up.railway.app/createquiz", {
       method: "POST",
       crossDomain: true,
       headers: {

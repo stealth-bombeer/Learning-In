@@ -37,7 +37,7 @@ const Scorecard = ({ score, count, setCount }) => {
     console.log("2dnb");
     console.log(room);
     console.log(authUser);
-    fetch("http://localhost:5000/scorecard", {
+    fetch("https://learning-in-production.up.railway.app/scorecard", {
       method: "POST",
       crossDomain: true,
       headers: {

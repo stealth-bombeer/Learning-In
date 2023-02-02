@@ -9,11 +9,14 @@ export const useSignup = () => {
   const signup = async (username, email, password, confirmpassword) => {
     setIsLoading(true);
     setError(null);
-    const response = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, email, password, confirmpassword }),
-    });
+    const response = await fetch(
+      "https://learning-in-production.up.railway.app/register",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, email, password, confirmpassword }),
+      }
+    );
     const json = await response.json();
     if (!response.ok) {
       setIsLoading(false);

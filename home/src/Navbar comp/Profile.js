@@ -25,7 +25,7 @@ const Profile = () => {
   const [onscore, setOnscore] = useState([]);
   const [personalScore, setPersonalScore] = useState(0);
 
-  fetch("http://localhost:5000/profile", {
+  fetch("https://learning-in-production.up.railway.app/profile", {
     method: "GET",
     crossDomain: true,
     headers: {
@@ -49,7 +49,7 @@ const Profile = () => {
     });
   //console.log👎
 
-  fetch("http://localhost:5000/viewprofile", {
+  fetch("https://learning-in-production.up.railway.app/viewprofile", {
     method: "GET",
     crossDomain: true,
     headers: {

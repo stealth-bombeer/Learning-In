@@ -31,7 +31,7 @@ const Result = ({ score1, setScore1 }) => {
     return;
   }
 
-  fetch("http://localhost:5000/result", {
+  fetch("https://learning-in-production.up.railway.app/result", {
     method: "POST",
     crossDomain: true,
     headers: {

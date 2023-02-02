@@ -10,7 +10,7 @@ const Ranklist = () => {
   //const [rankArray,setRankArray]=useState([]);
   console.log(room);
   useEffect(() => {
-    fetch("http://localhost:5000/ranklist", {
+    fetch("https://learning-in-production.up.railway.app/ranklist", {
       method: "GET",
       crossDomain: true,
       headers: {

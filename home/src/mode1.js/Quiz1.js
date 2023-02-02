@@ -35,7 +35,7 @@ const Quiz1 = ({ score, setScore, count, setCount }) => {
     setRoom(location.state.room);
     if (room) {
       console.log(room);
-      fetch("http://localhost:5000/quiz1", {
+      fetch("https://learning-in-production.up.railway.app/quiz1", {
         method: "GET",
         crossDomain: true,
         headers: {

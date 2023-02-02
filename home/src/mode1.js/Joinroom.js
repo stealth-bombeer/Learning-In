@@ -16,14 +16,15 @@ const Joinroom = () => {
     }
     room = code;
     console.log(room);
-    fetch("http://localhost:5000/joinroom", {
+    fetch("https://learning-in-production.up.railway.app/joinroom", {
       method: "POST",
       crossDomain: true,
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
         Authorization: `Bearer ${user.accessToken}`,
+        "Access-Control-Allow-Origin":
+          "https://learning-in-production.up.railway.app/",
       },
       body: JSON.stringify({ room: room }),
     })
