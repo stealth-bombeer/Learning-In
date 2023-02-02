@@ -38,7 +38,10 @@ const {user}=useAuthContext()
           (<div>
           <span className='text-gray-800 mr-4 text-lg   hover:text-purple-600   duration-200' >
          
-         <button onClick={handleClick}>Log Out</button>
+          
+          <button class="bg-transparent hover:bg-purple-500 text-purple-700 font-semibold hover:text-white py-2  px-4 border border-purple-500 hover:border-transparent rounded" onClick={handleClick}>
+  Log-Out
+</button>
            </span>
           <span className='text-gray-800  mr-4 text-lg hover:text-purple-600 duration-200' >
             <Link to="codetimer/">

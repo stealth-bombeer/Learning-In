@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import './NotFound.css'
 const NotFound = () => {
     return ( 
-        <section className="page_404">
-        <div className="container">
+        <section className="page_404 w-full h-screen">
+        <div className="container ">
           <div className="row">	
             <div className="col-sm-12 ">
               <div className="col-sm-10 col-sm-offset-1  text-center">

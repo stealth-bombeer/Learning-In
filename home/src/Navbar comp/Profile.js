@@ -94,7 +94,7 @@ const Profile = () => {
     return ( 
       <div class='bg-white w-full h-screen'>
         <div className='grid grid-cols-3 gap-0.25 mt-20'>
-         <div class=" rounded-lg pb-4 bg-slate-100  grid col-span-1 shadow-lg">
+         <div class=" rounded-lg pb-4 bg-slate-100  grid col-span-1 shadow-lg ">
          <div class="flex  justify-center object-contain w-96 ml-14  ">
               <img src="https://st3.depositphotos.com/3037725/13661/v/450/depositphotos_136613140-stock-illustration-faces-avatar-in-circle-portrait.jpg" className='object-contain  '/>
           </div>
@@ -121,8 +121,8 @@ const Profile = () => {
         </div>
         </div>
         </div>
-      <div class=" rounded-lg bg-white px-4 grid col-span-2 shadow-lg">
-        <div className='flex  justify-center'>
+      <div class=" rounded-lg grid col-span-2 bg-white px-4 grid shadow-lg">
+        <div className='flex  justify-center object-contain'>
         <div className="progressbar  mt-10">
           <div
             style={{
