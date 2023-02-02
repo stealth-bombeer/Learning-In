@@ -25,11 +25,9 @@
 - [Description](#description)
 - [Links](#links)
 - [Tech Stack](#tech-stack)
-- [Progress](#progress)
+- [Novelty Features](#novelty features)
 - [Future Scope](#future-scope)
-- [Applications](#applications)
 - [Project Setup](#project-setup)
-- [Usage](#usage)
 - [Team Members](#team-members)
 - [Mentors](#mentors)
 - [Screenshots](#screenshots)
@@ -76,9 +74,6 @@
             <li> Users can scroll global news headlines and keep themselves updated          
       </ul>
       <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
-    <div align="center">
-      A Profile-feature which allows users to track their learning progress and a real-time progress graph 🏆
-      </div>
     </td>
   </tr>
   </table>
