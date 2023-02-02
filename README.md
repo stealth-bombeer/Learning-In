@@ -84,6 +84,20 @@
   </table>
   </div>
   
+ ## 🌟Novelty Features 
+  <div align="center">
+  <table>
+  <tr>
+  <td>
+  <ul>
+  <li> A Profile-feature which allows users to track their learning progress using a progress-bar indicating their current level 📈
+  <li> Real-time progress graph which allows users to monitor their previous performances 📊
+  <li> Sound-Effects which makes the user experience more engaging 🎵
+  </td>
+  </tr>
+  </table>
+    </div>
+  
  ## 🔗Links
 
 - [GitHub Repository](https://github.com/stealth-bombeer/Learning-In)
@@ -138,7 +152,7 @@ Backend:-
 
 - **Kunal Goudani** 😈 - goudanikuanl3@gmail.com
 - **Dhruvisha Anghan** 🐬 - dhruvishaanghan2114@gmail.com
-- **Dev Bhuva** 👹- dbbhuva@gmail.com
+- **Dev Bhuva** 😇- dbbhuva@gmail.com
 
 ## 👨‍🏫Mentors
 
