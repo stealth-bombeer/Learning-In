@@ -129,9 +129,11 @@ Backend:-
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
 ## 🦅Future Scope
-- [ ] The User Interface can be made more user friendly though we have tried to create an execellent UI as per our knowledge.
-- [ ] Dark mode can be implemented using low-light filters.
+- [ ] Create a live quiz room which a group of users can create and join and get live ranklists after each question.
 - [ ] A proctoring system for mode-1 can be implemented to avoid unfair means during quizzes.
+- [ ] Give more in depth analysis of the quiz given and display performance of each topic so that users can know which topic to work on.
+- [ ] Dark-Mode for the website.
+
 
 
 ## 👩‍💻Team members
