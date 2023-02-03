@@ -125,7 +125,7 @@
 
 1. Clone the repository
 ```
-https://github.com/stealth-bombeer/Hostel-Management-Portal.git
+https://github.com/stealth-bombeer/Learning-In.git
 
 ```
 To start the frontend user interface
