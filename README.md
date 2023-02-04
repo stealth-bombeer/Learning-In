@@ -156,7 +156,7 @@ Backend:-
 <img src="https://i.imgur.com/dBaSKWF.gif" height="20" width="100%">
 
 ## 🦅Future Scope
-- [ ] Create a live quiz room which a group of users can create and join and get live ranklists after each question.
+- [ ] Create a live quiz room in which a group of users can create and join quizzes and get live ranklists among it's peers.
 - [ ] A proctoring system for mode-1 can be implemented to avoid unfair means during quizzes.
 - [ ] Give more in depth analysis of the quiz given and display performance of each topic so that users can know which topic to work on.
 - [ ] Dark-Mode for the website.
